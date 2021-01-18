@@ -1,24 +1,22 @@
+@import '~antd/dist/antd.css';
+
+
 .nav{
     display:inline-flex;
 }
 .title{
     margin-left: 20px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    cursor: pointer;
 }
 .items{
-    margin-top: 35px;
+    margin-top: 20px;
     margin-left: 10rem;
 }
 span{
     color: #229954;
-}
-a{
-    margin-left:30px;
-    text-decoration: none;
-    color: #229954;
-    transition: 0.3s;
-}
-a:hover{
-    color: black;
 }
 input{
     margin-left: 30rem;
@@ -43,4 +41,17 @@ input{
 .search:hover{
     background-color: #229954;
     color: white;
+}
+.description{
+    display: inline-flex;
+}
+.info{
+    margin-left: 20px;
+    margin-top: 100px;
+}
+.img-1{
+    width: 30rem;
+    margin-right: 250px;
+    float: right;
+    padding-bottom: 70px;
 }

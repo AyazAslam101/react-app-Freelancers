@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import Navbar from './components/navbar/navbar'
-import Freelancer from "./components/freelancers/freelancers"
+// import Freelancer from "./components/freelancers/freelancers"
 
 function App() {
   return (

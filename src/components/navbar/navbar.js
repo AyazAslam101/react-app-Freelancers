@@ -1,4 +1,8 @@
 import React  from 'react'
+// import {Layout} from 'antd'
+import NavItems from './navItems/navItems'
+import Title from "./title/title"
+import img1 from '../../assets/new.jpg'     
 import './navbar.css'
 import Aux from '../../hoc/Auxiliary'
 
@@ -6,18 +10,19 @@ function navbar() {
 
     return (
         <Aux>
-            <div className="nav">
-                <h2 className="title">Freelancers<span>.co</span></h2> 
-                <div className="items">
-                    <a href="">Home</a>
-                    <a href="#">Hire</a>
-                    <a href="#">Get Hired</a>
-                    <a href="#">Articles</a>
-                    <input type="text" placeholder="Search"/>
-                    <button className="search">Search</button>
+            <div className="nav"> 
+            <Title />
+            <NavItems/>
+            </div>
+            <div className="decription">
+                <div className="info">
+                    <h1 className="info-title">Lorem ipsum dolor sit amet consectetur.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestias hic laboriosam quam eum ducimus distinctio autem quaerat itaque fugit saepe veritatis reiciendis.</p>
+                </div>
+                <div className="img">
+                    <img src={img1} alt="" className="img-1"/>
                 </div>
             </div>
-            <div className=""></div>
         </Aux>
     )
 }
