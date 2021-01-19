@@ -1,18 +1,25 @@
-import React from 'react'
-import {Button } from 'antd'
+import React, {useState} from 'react'
 import Home from "./home/home";
 import Hire from './hire/hire';
 import GetHire from './get hire/getHire';
-import {SearchOutlined} from '@ant-design/icons';
+import SearchBar from './searchBar/searchBar'
 
 function navItems() {
+    const [searchBarRender , setSearchBarRender] = useState=({
+        showSeacrh : false
+    })
+
+    let search = null;
+        if(searchBarRender.showSeacrh) {
+            search = <div className="search-bar"><SearchBar /></div>  
+          }
+        
     return (
         <div className="items" style={{ display : "inline-flex"}} >
             <Home/>
             <Hire />
             <GetHire />
-            <input type="text" placeholder="Search" />
-            <Button className="search" icon={<SearchOutlined />} shape="circle"></Button>
+            
         </div>
     )
 }

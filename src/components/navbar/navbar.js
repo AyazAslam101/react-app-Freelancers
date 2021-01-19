@@ -14,15 +14,6 @@ function navbar() {
             <Title />
             <NavItems/>
             </div>
-            <div className="decription">
-                <div className="info">
-                    <h1 className="info-title">Lorem ipsum dolor sit amet consectetur.</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestias hic laboriosam quam eum ducimus distinctio autem quaerat itaque fugit saepe veritatis reiciendis.</p>
-                </div>
-                <div className="img">
-                    <img src={img1} alt="" className="img-1"/>
-                </div>
-            </div>
         </Aux>
     )
 }
