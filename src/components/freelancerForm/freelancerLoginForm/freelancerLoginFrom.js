@@ -18,7 +18,7 @@ function FreelancerLoginFrom(props) {
         <div className="login-form">
         <div className="login-information">
         <input className="email-information" type={Text} placeholder="Email Adress or phone number"></input>
-        <input  className="password-information" type={Text} placeholder="Email Adress or phone number"></input>
+        <input  className="password-information" type="Password" placeholder="password"></input>
         </div>
         <div className="login-button">
         <button className="button-login" onClick={goToHomePage}>Login in</button>
