@@ -5,7 +5,7 @@ import GetHire from './get hire/getHire';
 import SearchBar from './searchBar/searchBar'
 
 function navItems() {
-    const [searchBarRender , setSearchBarRender] = useState=({
+    const [searchBarRender , setSearchBarRender] = useState({
         showSeacrh : false
     })
 
