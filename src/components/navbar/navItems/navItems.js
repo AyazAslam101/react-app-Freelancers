@@ -1,18 +1,24 @@
 import React from 'react'
-import {Button } from 'antd'
+import {NavLink} from 'react-router-dom'
 import Home from "./home/home";
 import Hire from './hire/hire';
 import GetHire from './get hire/getHire';
-import {SearchOutlined} from '@ant-design/icons';
+import SearchBar from './searchBar/searchBar'
 
-function navItems() {
+function navItems(props) {
+    
+
+let searchBar = null;
+if(props.search.showSearch) {
+    searchBar = <SearchBar />  
+}
+        
     return (
         <div className="items" style={{ display : "inline-flex"}} >
-            <Home/>
-            <Hire />
-            <GetHire />
-            <input type="text" placeholder="Search" />
-            <Button className="search" icon={<SearchOutlined />} shape="circle"></Button>
+            <NavLink to='./home'><Home/></NavLink>
+            <NavLink to='./hire'><Hire /></NavLink>
+            <NavLink to='./getHire'><GetHire /></NavLink>
+            {searchBar}
         </div>
     )
 }
