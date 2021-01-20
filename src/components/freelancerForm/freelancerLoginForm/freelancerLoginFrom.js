@@ -16,6 +16,7 @@ function FreelancerLoginFrom(props) {
     
     return (
         <div className="login-form">
+            <h4>LOGIN FORM</h4>
         <div className="login-information">
         <input className="email-information" type={Text} placeholder="Email Adress or phone number"></input>
         <input  className="password-information" type="Password" placeholder="password"></input>
