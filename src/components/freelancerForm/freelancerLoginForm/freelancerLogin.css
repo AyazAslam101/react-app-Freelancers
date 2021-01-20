@@ -1,8 +1,8 @@
 @import "~antd/dist/antd.css";
 .login-form {
   background-color: #fff;
-  width: 00px;
-  height: 0px;
+  width: 400px;
+  height: 390px;
   text-align: center;
   border-radius: 10px;
   padding: 20px;

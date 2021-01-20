@@ -9,17 +9,17 @@ function freelancerSignup() {
         // <input  className="signup-" type="Password" placeholder="password"></input>
         // </div>
         // </div>
-        <div className="login-form">
+        <div className="signup-form">
           <h4>SIGNUP FORM</h4>
-        <div className="login-information">
-        <input className="email-information" type={Text} placeholder="Email Adress or phone number"></input>
-        <input  className="password-information" type="Password" placeholder="password"></input>
-        <input  className="password-information" type=" Password" placeholder="Confirm password"></input>
+        <div className="signup-information">
+        <input className="signup-email-information" type={Text} placeholder="Email Adress or phone number"></input>
+        <input  className="signup-password-information" type="Password" placeholder="password"></input>
+        <input  className="signup-password-information" type=" Password" placeholder="Confirm password"></input>
         </div>
-        <div className="login-button">
-        <button className="button-login" >SignUp</button>
+        <div className="signup-login-button">
+        <button className="signup-button-login" >SignUp</button>
         </div>
-        <div className="a-tag">Learn More?</div>
+        <div className="signup-a-tag">Learn More?</div>
         </div>
     )
 }
