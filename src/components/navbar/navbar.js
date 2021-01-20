@@ -9,7 +9,7 @@ function navbar(props) {
 
     return (
         <Aux>
-            <div className="nav"> 
+            <div className="nav">
             <Title />
             <NavItems search={props.search} />
             </div>

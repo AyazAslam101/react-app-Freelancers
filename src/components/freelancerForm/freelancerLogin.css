@@ -23,7 +23,7 @@
   width: 330px;
   border-radius: 8px;
   margin-bottom: 10px;
-  border: 1px solid #ccd0d5;
+  border: 1px solid #CCD0D5;
 }
 .password-information {
   margin-top: 10px;
@@ -32,7 +32,7 @@
   padding: 14px 16px;
   width: 330px;
   border-radius: 8px;
-  border: 1px solid #ccd0d5;
+  border: 1px solid #CCD0D5;
   margin-bottom: 10px;
 }
 .password-information:focus {
@@ -48,7 +48,7 @@ input::placeholder {
   padding: 20px;
 }
 .button-login {
-  background-color: #2980b9;
+  background-color: #2980B9;
   margin-top: 10px;
   font-size: 17px;
   width: 330px;
@@ -60,14 +60,14 @@ input::placeholder {
   transition: 0.3s;
 }
 .button-login:hover {
-  background-color: #1665ce;
+  background-color: #1665CE;
   cursor: pointer;
   transition: 0.3s;
   border: none;
 }
 .line {
   align-items: center;
-  border-bottom: 2px solid #d9d9dd;
+  border-bottom: 2px solid #D9D9DD;
   display: flex;
   margin: 20px 16px;
   text-align: center;
@@ -80,7 +80,7 @@ input::placeholder {
     text-decoration: underline;
 }
 .acc-button {
-  background-color: #27ae60;
+  background-color: #27AE60;
   width: 180px;
   height: 45px;
   color: white;
