@@ -1,25 +1,23 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Home from "./home/home";
 import Hire from './hire/hire';
 import GetHire from './get hire/getHire';
 import SearchBar from './searchBar/searchBar'
 
-function navItems() {
-    const [searchBarRender , setSearchBarRender] = useState=({
-        showSeacrh : false
-    })
+function navItems(props) {
+    
 
-    let search = null;
-        if(searchBarRender.showSeacrh) {
-            search = <div className="search-bar"><SearchBar /></div>  
-          }
+let searchBar = null;
+if(props.search.showSearch) {
+    searchBar = <SearchBar />  
+}
         
     return (
         <div className="items" style={{ display : "inline-flex"}} >
             <Home/>
             <Hire />
             <GetHire />
-            
+            {searchBar}
         </div>
     )
 }

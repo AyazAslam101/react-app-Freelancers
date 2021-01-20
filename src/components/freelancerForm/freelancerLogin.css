@@ -1,0 +1,93 @@
+@import "~antd/dist/antd.css";
+.login-form {
+  background-color: #fff;
+  width: 400px;
+  height: 350px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+  box-sizing: border-box;
+  text-shadow: 0 0 0.2px #00000091;
+}
+.login-form:hover {
+  box-shadow: 0px 0px 50px -18px rgba(0, 0, 0, 0.21);
+  cursor: progress;
+  transition: ease-in-out all 0.5s;
+}
+.email-information {
+  margin-top: 10px;
+  height: 45px;
+  font-size: 17px;
+  padding: 14px 16px;
+  width: 330px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccd0d5;
+}
+.password-information {
+  margin-top: 10px;
+  height: 45px;
+  font-size: 17px;
+  padding: 14px 16px;
+  width: 330px;
+  border-radius: 8px;
+  border: 1px solid #ccd0d5;
+  margin-bottom: 10px;
+}
+.password-information:focus {
+  outline: 0;
+  border: 1px solid #7FB3D5 ;
+}
+.email-information:focus {
+  outline: 0;
+  border: 1px solid #7FB3D5 ;
+}
+input::placeholder {
+  opacity: 0.7;
+  padding: 20px;
+}
+.button-login {
+  background-color: #2980b9;
+  margin-top: 10px;
+  font-size: 17px;
+  width: 330px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.button-login:hover {
+  background-color: #1665ce;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+.line {
+  align-items: center;
+  border-bottom: 2px solid #d9d9dd;
+  display: flex;
+  margin: 20px 16px;
+  text-align: center;
+}
+.a-tag {
+  margin: 15px;
+  font-size: 16px;
+}
+.a-tag:hover{
+    text-decoration: underline;
+}
+.acc-button {
+  background-color: #27ae60;
+  width: 180px;
+  height: 45px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+.acc-button:hover {
+  background-color: #229954;
+  cursor: pointer;
+}
