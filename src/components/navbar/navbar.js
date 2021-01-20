@@ -1,7 +1,11 @@
 import React  from 'react'
 // import {Layout} from 'antd'
 import NavItems from './navItems/navItems'
+
+// import FreelancerLoginFrom from "../freelancerForm/freelancerLogin/freelancerLoginFrom"  
+
 import Title from "./title/title"    
+
 import './navbar.css'
 import Aux from '../../hoc/Auxiliary'
 
@@ -13,6 +17,7 @@ function navbar(props) {
             <Title />
             <NavItems search={props.search} />
             </div>
+            
         </Aux>
     )
 }
