@@ -8,7 +8,7 @@ function home() {
         textDecoration: "none",
         color: "#229954",
         transition: "0.3s",
-    'hover':{
+    ':hover':{
         color: "black"
     }
 }

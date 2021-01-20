@@ -1,0 +1,76 @@
+@import '~antd/dist/antd.css';
+.login-form{
+    background-color: rgb(206, 200, 200);
+    width: 400px;
+    height:350px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+.email-information{
+    margin-top: 10px;
+    height: 45px;
+    font-size: 17px;
+    padding: 14px 16px;
+    width: 330px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+}
+.password-information{
+    margin-top: 10px;
+    height: 45px;
+    font-size: 17px;
+    padding: 14px 16px;
+    width: 330px;
+    border-radius: 10px;
+    border: none;
+    border: none;
+}
+.password-information:focus{
+    outline: 0;
+}
+.email-information:focus{
+    outline: 0;
+}
+input::placeholder{
+    opacity: 0.7;
+    padding: 20px;
+}
+.button-login{
+    background-color: rgb(0, 0, 117);
+    margin-top: 10px;
+    font-size: 17px;
+    padding: 14px 16px;
+    width: 330px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;   
+}
+.button-login:hover{
+    background-color: rgb(0, 0, 130);
+    cursor: pointer;
+}
+.line{
+    align-items: center;
+    border-bottom: 1px solid #0D0D0E;
+    display: flex;
+    margin: 20px 16px;
+    text-align: center;
+}
+.a-tag{
+    margin: 20px;
+}
+.acc-button{
+    background-color: rgb(0, 110, 0);
+    width: 150px;
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+}
+.acc-button:hover{
+    background-color: rgb(0, 130, 0);
+    cursor: pointer;
+}
