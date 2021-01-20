@@ -16,12 +16,9 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-<<<<<<< HEAD
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-=======
     "redux": "^4.0.5",
->>>>>>> ali
     "web-vitals": "^0.2.4"
   },
   "scripts": {
