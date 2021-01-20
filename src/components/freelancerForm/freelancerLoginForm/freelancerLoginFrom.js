@@ -9,6 +9,7 @@ function FreelancerLoginFrom(props) {
     })
     const goToHomePage =()=>{
         if(homePage.routerpage === true){
+            props.showSearch()
             history.push('/home')
         }
     }
@@ -20,7 +21,8 @@ function FreelancerLoginFrom(props) {
         <input  className="password-information" type={Text} placeholder="Email Adress or phone number"></input>
         </div>
         <div className="login-button">
-        <button className="button-login" onClick={goToHomePage}>Login in</button>
+        <button className="button-login" onClick={goToHomePage} 
+        >Login in</button>
         </div>
         <div className="a-tag"><Button>Forgotten Password?</Button></div>
         <div className="line">
