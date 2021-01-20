@@ -9,6 +9,7 @@ function FreelancerLoginFrom(props) {
     })
     const goToHomePage =()=>{
         if(homePage.routerpage === true){
+            props.showSearch()
             history.push('/home')
         }
     }
