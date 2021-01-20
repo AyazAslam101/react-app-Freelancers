@@ -15,8 +15,8 @@
     font-size: 25px;
     cursor: pointer;
     color: #333333;
-background: #FFFFFF;
-text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+    background: #FFFFFF;
+    text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
 }
 .items{
     margin-top: 20px;
@@ -30,10 +30,9 @@ input{
     margin-top: 5px;
     width: 14rem;
     text-align: center;
-    border: none;
-    border-bottom: 1px solid#229954;
+    /* border: none; */
     /* color: #229954; */
-    height: 20px;
+    height: 30px;
 }
 .search-bar{
     position: absolute;
@@ -43,12 +42,11 @@ input{
     transform: translate(-50%,-50%);
     background: white;
     height: 40px;
-    border-radius: 40px;
+    background: transparent;
     padding: 5px;
 }
 .input{
-    border: none;
-    border-bottom: 1px solid #229954;
+    border: 1px solid #229954;
     background: none;
     text-align: center;
     outline: none;
@@ -72,27 +70,12 @@ input{
     color: #229954;
     float: right;
     background-color: #229954;
-    width: 40px;
+    width: 30px;
     border-color: #229954;
-    height: 40px;
-    border-radius: 50%;
+    height: 30px;
     background: none;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.4s;
-}
-
-.description{
-    display: inline-flex;
-}
-.info{
-    margin-left: 20px;
-    margin-top: 100px;
-}
-.img-1{
-    width: 30rem;
-    position: left;
-    float: right;
-    padding-bottom: 70px;
 }

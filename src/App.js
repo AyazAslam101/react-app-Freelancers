@@ -13,9 +13,8 @@ function App() {
     showSearch : false
 })
 const showSearchHandler = ()=>{
-  let show = searchBarRender.showSeacrh
   setSearchBarRender({
-    showSearch: !show
+    showSearch: true
   })
 }
 
