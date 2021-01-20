@@ -1,25 +1,25 @@
-import React, {useState} from 'react'
+import React from 'react'
+import {NavLink} from 'react-router-dom'
 import Home from "./home/home";
 import Hire from './hire/hire';
 import GetHire from './get hire/getHire';
 import SearchBar from './searchBar/searchBar'
 
-function navItems() {
-    const [searchBarRender , setSearchBarRender] = useState({
-        showSeacrh : false
-    })
 
-    let search = null;
-        if(searchBarRender.showSeacrh) {
-            search = <div className="search-bar"><SearchBar /></div>  
-          }
+function navItems(props) {
+
+
+let searchBar = null;
+if(props.search.showSearch) {
+    searchBar = <SearchBar />  
+}
         
     return (
         <div className="items" style={{ display : "inline-flex"}} >
-            <Home/>
-            <Hire />
-            <GetHire />
-            
+            <NavLink to='./home'><Home/></NavLink>
+            <NavLink to='./hire'><Hire /></NavLink>
+            <NavLink to='./getHire'><GetHire /></NavLink>
+            {searchBar}
         </div>
     )
 }

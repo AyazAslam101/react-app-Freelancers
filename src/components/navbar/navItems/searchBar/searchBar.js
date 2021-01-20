@@ -4,7 +4,7 @@ import Button from './button/button'
 
 function searchBar() {
     return (
-        <div>
+        <div className="search-bar">
             <Input />
             <Button />
         </div>
