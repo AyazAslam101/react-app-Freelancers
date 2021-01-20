@@ -1,6 +1,6 @@
 @import "~antd/dist/antd.css";
-.signup{
-    background-color: #faf9f9;
+.signup-form{
+  background-color: #faf9f9;
   width: 400px;
   height: 350px;
   text-align: center;
@@ -19,7 +19,7 @@ h4{
   cursor: progress;
   transition: ease-in-out all 0.5s;
 }
-.signup-information {
+.signup-email-information{
   margin-top: 10px;
   height: 45px;
   font-size: 17px;
@@ -29,7 +29,7 @@ h4{
   margin-bottom: 10px;
   border: 1px solid #CCD0D5;
 }
-.signup--information {
+.signup-password-information{
   margin-top: 10px;
   height: 45px;
   font-size: 17px;
@@ -51,7 +51,7 @@ input::placeholder {
   opacity: 0.7;
   padding: 20px;
 }
-.signup-button-login {
+.signup-button-login{
   background-color: #2980B9;
   margin-top: 10px;
   font-size: 17px;
@@ -62,12 +62,14 @@ input::placeholder {
   color: white;
   border-radius: 10px;
   transition: 0.3s;
+  margin-bottom: 10px;
   text-shadow: 0px 3px 3px rgba(255,255,255,0.5), 0px 0px 0px rgba(206,89,55,0);
 }
 .signup-button-login:hover {
   background-color: #1665CE;
   cursor: pointer;
   transition: 0.3s;
+  color: #1665CE;
   border: none;
 }
 .signup-line {
@@ -84,16 +86,4 @@ input::placeholder {
 }
 .signup-a-tag:hover{
     text-decoration: underline;
-}
-.signup-acc-button {
-  background-color: #27AE60;
-  width: 180px;
-  height: 45px;
-  color: white;
-  border-radius: 8px;
-  border: none;
-}
-.signup-acc-button:hover {
-  background-color: #229954;
-  cursor: pointer;
 }

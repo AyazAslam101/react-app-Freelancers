@@ -19,7 +19,7 @@ function freelancerSignup() {
         <div className="signup-login-button">
         <button className="signup-button-login" >SignUp</button>
         </div>
-        <div className="signup-a-tag">Learn More?</div>
+        <div className="a-tag">Learn More?</div>
         </div>
     )
 }
