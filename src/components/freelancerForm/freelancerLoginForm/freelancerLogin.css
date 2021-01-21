@@ -1,20 +1,14 @@
 @import "~antd/dist/antd.css";
-/* @import '~antd/lib/style/themes/default.less';
-@import '~antd/dist/antd.less';
-@import 'your-theme-file.less'; */
 
 
 .login-form {
-  background-color: #fff;
   width: 400px;
   height: 450px;
-  text-align: center;
-  border-radius: 10px;
-  padding: 30px;
-  box-sizing: border-box;
-  text-shadow: 0 0 0.2px #00000091;
-  background-color: #ffffff;
-  text-shadow: 0 0 0.2px #00000091;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 2rem 2rem;
+  box-shadow: 0 1px 2px #D9D9DD;
+  background-color: #fff;
 }
 h4{
   font-size: 24px;
@@ -27,7 +21,6 @@ h4{
 }
 .email-information {
   margin-top: 10px;
-  /* @border-color-base: #d9d9d9; */
   height: 45px;
   font-size: 17px;
   padding: 14px 16px;

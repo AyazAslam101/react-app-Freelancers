@@ -1,15 +1,10 @@
 @import "~antd/dist/antd.css";
 .signup-form{
-  background-color: #faf9f9;
   width: 400px;
   height: 400px;
-  text-align: center;
-  border-radius: 10px;
-  padding: 30px;
-  /* padding-bottom: 40px ; */
-  margin: 100px;
-  box-sizing: border-box;
-  text-shadow: 0 0 0.2px #00000091;
+  margin: 0 auto;
+  padding: 4rem;
+  background-color: #faf9f9;
 }
 h4{
     font-size: 24px;
