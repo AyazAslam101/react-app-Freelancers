@@ -1,10 +1,10 @@
 import React from 'react'
 import SignUpForm from "../freelancerForm/freelancersignup/freelancerSignup"
 
-function signUpModal() {
+function signUpModal(props) {
     return (
         <div>
-            <SignUpForm/>
+            <SignUpForm handleUser={props.handleUserData}/>
         </div>
     )
 }

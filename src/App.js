@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React,  {useState} from 'react'
+import {useSelector} from 'react-redux';
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
 import './App.css';
 import Navbar from './components/navbar/navbar'
@@ -8,6 +9,7 @@ import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
 import getHirePage from './components/getHirePage/getHirePage';
 function App() {
+  const users = useSelector(state => state.user)
 
   const [searchBarRender , setSearchBarRender] = useState({
     showSearch : false
@@ -32,6 +34,11 @@ const showSearchHandler = ()=>{
     showSearch: !show
   })
 }
+const handleUserData = (userData)=>{
+  userData.id = Math.random();
+  let data = [...users, userData]
+  
+}
 
   return (
     <div className="App">
@@ -43,7 +50,8 @@ const showSearchHandler = ()=>{
           showModal={showModal}
           handleOk={handleOk}
           handleCancel={handleCancel}
-          isModalVisible={isModalVisible}/></Route>
+          isModalVisible={isModalVisible}
+          handleUser={handleUserData}/></Route>
           <Route path="/home" exact component={HomePage}/>
           <Route path="/hire" exact component={hirePage}/>
           <Route path="/getHire" exact component={getHirePage}/>
