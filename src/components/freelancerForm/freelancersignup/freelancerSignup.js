@@ -1,16 +1,14 @@
 import React, {useState} from 'react';
 // import {useSelector} from 'react-redux';
 import '../freelancersignup/freelancerSignup.css'
-import {useDispatch, useSelector} from 'react-redux'
+import { useSelector} from 'react-redux'
 
 
 const  FreelancerSignup =(props) => {
 
   const dataUser = useSelector(state=>state.userDetails)
 
-  console.log({dataUser});
-
-  const dispatch = useDispatch();
+  console.log(dataUser , "hello");
 
   const [userInput, setuserInput] = useState({
     name : "",
@@ -24,7 +22,7 @@ const  FreelancerSignup =(props) => {
   // console.log(userInput)
   const handleSubmit = (e) =>{
     e.preventDefault()
-    props.handleUser(userInput)
+    props.handleUser(userInput)git 
   }
 
   const handleData =(event)=>{

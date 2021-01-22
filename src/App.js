@@ -1,4 +1,4 @@
-import React,  {useState} from 'react'
+import React,  {useState , useEffect} from 'react'
 import {useSelector , useDispatch} from 'react-redux';
 import { usersAction} from './action'
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
@@ -12,9 +12,21 @@ import getHirePage from './components/getHirePage/getHirePage';
 
 
 function App() {
-  const users = useSelector(state => state.user);
-  console.log({users});
+  const users = useSelector(state => state.userDetails);
+
+  // const [data, setData] = useState([...users])
+  // console.log({users});
   const dispatch = useDispatch()
+  // // useEffect(()=>{
+  // //   setData(
+  // //     JSON.parse(localStorage.data ? localStorage.data : [])
+  // //   )
+  // // })
+  // console.log(users);
+  
+  // useEffect(()=>{
+  //   localStorage.setItem("name" , JSON.stringify(data))
+  // } , [data])
 
   const [searchBarRender , setSearchBarRender] = useState({
     showSearch : false
@@ -41,10 +53,6 @@ const showSearchHandler = ()=>{
 }
 const handleUserData = (userData)=>{
   dispatch(usersAction(userData))
-  // console.log({userData})
-  // userData.id = Math.random();
-  // let data = [...users, userData]
-  
 }
 
   return (
