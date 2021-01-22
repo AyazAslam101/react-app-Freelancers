@@ -34,7 +34,7 @@ function FreelancerLoginFrom(props) {
             <div>
             <button className="acc-button"
             onClick={props.showModal}>Create New Account</button>
-            <Modal  visible={props.isModalVisible} onOk={props.handleOk} onCancel={props.handleCancel} footer={null} closable={null}>
+            <Modal  visible={props.isModalVisible} onOk={props.handleOk} onCancel={props.handleCancel} footer={null}>
                 <div className="signup-style-in-modal">
                     <SignUpModal handleUserData={props.handleUser}/>
                 </div>
