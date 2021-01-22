@@ -1,5 +1,9 @@
-export const users = () => {
+import { USER_ACTION } from "./constants";
+
+export const usersAction = (payload) => {
+    console.log({usData:payload});
     return {
-        type : 'USERS'
+        type : USER_ACTION,
+        payload
     }
 }

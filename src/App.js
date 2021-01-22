@@ -1,5 +1,6 @@
 import React,  {useState} from 'react'
-import {useSelector} from 'react-redux';
+import {useSelector , useDispatch} from 'react-redux';
+import { usersAction} from './action'
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
 import './App.css';
 import Navbar from './components/navbar/navbar'
@@ -8,8 +9,12 @@ import FreelancerLogin from "./components/freelancerForm/freelancerLoginForm/fre
 import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
 import getHirePage from './components/getHirePage/getHirePage';
+
+
 function App() {
-  const users = useSelector(state => state.user)
+  const users = useSelector(state => state.user);
+  console.log({users});
+  const dispatch = useDispatch()
 
   const [searchBarRender , setSearchBarRender] = useState({
     showSearch : false
@@ -35,8 +40,10 @@ const showSearchHandler = ()=>{
   })
 }
 const handleUserData = (userData)=>{
-  userData.id = Math.random();
-  let data = [...users, userData]
+  dispatch(usersAction(userData))
+  // console.log({userData})
+  // userData.id = Math.random();
+  // let data = [...users, userData]
   
 }
 

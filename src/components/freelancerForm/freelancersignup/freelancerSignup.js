@@ -1,9 +1,17 @@
 import React, {useState} from 'react';
 // import {useSelector} from 'react-redux';
 import '../freelancersignup/freelancerSignup.css'
+import {useDispatch, useSelector} from 'react-redux'
 
 
 const  FreelancerSignup =(props) => {
+
+  const dataUser = useSelector(state=>state.userDetails)
+
+  console.log({dataUser});
+
+  const dispatch = useDispatch();
+
   const [userInput, setuserInput] = useState({
     name : "",
     email : "",
