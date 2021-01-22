@@ -1,9 +1,9 @@
 @import "~antd/dist/antd.css";
-.signup-form{
+.signup-form {
   width: 400px;
   height: 400px;
-  margin: 0 auto;
-  padding: 4rem;
+  margin: auto;
+  text-align: center;
   background-color: #faf9f9;
 }
 h4{

@@ -3,11 +3,12 @@
 
 .login-form {
   width: 400px;
-  height: 450px;
-  margin: 0 auto;
+  height: 425px;
+  margin: auto;
   border-radius: 8px;
+  text-align: center;
   padding: 2rem 2rem;
-  box-shadow: 0 1px 2px #D9D9DD;
+  box-shadow: 0 0px 3px #D9D9DD;
   background-color: #fff;
 }
 h4{
