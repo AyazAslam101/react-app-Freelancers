@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 // import {useSelector} from 'react-redux';
 import '../freelancersignup/freelancerSignup.css'
 import { useSelector} from 'react-redux'
+// import {useHistory} from 'react-router-dom'
 
 
 const  FreelancerSignup =(props) => {
@@ -14,15 +15,24 @@ const  FreelancerSignup =(props) => {
     name : "",
     email : "",
     password : "",
-    img : ""
+    img : "",
+    description : ""
+  })
+  
+  const [showNewForm, setshowNewForm] = useState({
+    showPhotoUploader : false 
   })
 
 
-  // console.log(userInput)
-  // console.log(userInput)
+  
   const handleSubmit = (e) =>{
     e.preventDefault()
-    props.handleUser(userInput)git 
+    props.handleUser(userInput)
+    let showUploader = showNewForm.showPhotoUploader;
+    setshowNewForm({
+      showPhotoUploader : !showUploader
+    })
+    
   }
 
   const handleData =(event)=>{
