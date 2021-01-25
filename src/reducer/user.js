@@ -1,9 +1,19 @@
-const initialState = []
+import { USER_ACTION } from "../action/constants";
+
+const initialState = {
+    users: JSON.parse(localStorage.users || "[]")
+}
 
 
-const user = (state = initialState, action )=>{
+
+export  const userDetails = (state = initialState, action )=>{
+
     switch(action.type) {
-        case "USERS":
-            return state
+        case USER_ACTION:
+            const _state = {...state};
+            _state.users = [..._state.users, action.payload];
+            localStorage.setItem("users",JSON.stringify(_state.users))
+            return _state;
     }
+    return state;
 }

@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
 // import {useSelector} from 'react-redux';
 import '../freelancersignup/freelancerSignup.css'
+import { useSelector} from 'react-redux'
 
 
 const  FreelancerSignup =(props) => {
+
+  const dataUser = useSelector(state=>state.userDetails)
+
+  console.log(dataUser , "hello");
+
   const [userInput, setuserInput] = useState({
     name : "",
     email : "",
