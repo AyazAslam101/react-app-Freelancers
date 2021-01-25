@@ -17,7 +17,8 @@ function FreelancerLoginFrom(props) {
     })
     const goToHomePage =(e)=>{
         e.preventDefault()
-        let result = Object.keys(data).find((elemnet) => {
+        console.log(data.users);
+        let result = data.users.find((elemnet) => {
             return (elemnet.email === loginData.email && elemnet.password === loginData.password)
         })
         if(result){
@@ -58,11 +59,11 @@ function FreelancerLoginFrom(props) {
                 </div>
             </div>
             </form>
-                <Modal  visible={props.isModalVisible} onOk={props.handleOk} onCancel={props.handleCancel} footer={null}>
-                    <div className="signup-style-in-modal">
-                        <SignUpModal handleUserData={props.handleUser} /> 
-                    </div>
-                </Modal>
+            <Modal  visible={props.isModalVisible} onOk={props.handleOk} onCancel={props.handleCancel} footer={null}>
+                <div className="signup-style-in-modal">
+                    <SignUpModal handleUserData={props.handleUser} /> 
+                </div>
+            </Modal>
         </Aux>
     )
 }
