@@ -5,8 +5,9 @@ import Hire from './hire/hire';
 import GetHire from './get hire/getHire';
 import SearchBar from './searchBar/searchBar'
 
+
 function navItems(props) {
-    
+
 
 let searchBar = null;
 if(props.search.showSearch) {

@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.10.2",
+    "css-loader": "^5.0.1",
     "radium": "^0.26.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -15,6 +16,8 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
     "redux": "^4.0.5",
     "web-vitals": "^0.2.4"
   },

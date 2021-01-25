@@ -1,76 +1,99 @@
-@import '~antd/dist/antd.css';
-.login-form{
-    background-color: rgb(206, 200, 200);
-    width: 400px;
-    height:350px;
-    text-align: center;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
+@import "~antd/dist/antd.css";
+
+
+.login-form {
+  width: 400px;
+  height: 425px;
+  margin: auto;
+  border-radius: 8px;
+  text-align: center;
+  padding: 2rem 2rem;
+  box-shadow: 0 0px 3px #D9D9DD;
+  background-color: #fff;
 }
-.email-information{
-    margin-top: 10px;
-    height: 45px;
-    font-size: 17px;
-    padding: 14px 16px;
-    width: 330px;
-    border-radius: 10px;
-    border: none;
-    text-decoration: none;
+h4{
+  font-size: 24px;
+  text-shadow: 0px 3px 3px rgba(255,255,255,0.5), 2px 2px 2px rgba(206,89,55,0);
 }
-.password-information{
-    margin-top: 10px;
-    height: 45px;
-    font-size: 17px;
-    padding: 14px 16px;
-    width: 330px;
-    border-radius: 10px;
-    border: none;
-    border: none;
+.login-form:hover {
+  box-shadow: 0px 0px 50px -18px rgba(0, 0, 0, 0.21);
+  cursor: progress;
+  transition: ease-in-out all 0.5s;
 }
-.password-information:focus{
-    outline: 0;
+.email-information {
+  margin-top: 10px;
+  height: 45px;
+  font-size: 17px;
+  padding: 14px 16px;
+  width: 330px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #CCD0D5;
 }
-.email-information:focus{
-    outline: 0;
+.password-information {
+  margin-top: 10px;
+  height: 45px;
+  font-size: 17px;
+  padding: 14px 16px;
+  width: 330px;
+  border-radius: 8px;
+  border: 1px solid #CCD0D5;
+  margin-bottom: 10px;
 }
-input::placeholder{
-    opacity: 0.7;
-    padding: 20px;
+.password-information:focus {
+  outline: 0;
+  border: 1px solid #7FB3D5 ;
 }
-.button-login{
-    background-color: rgb(0, 0, 117);
-    margin-top: 10px;
-    font-size: 17px;
-    padding: 14px 16px;
-    width: 330px;
-    border: none;
-    color: white;
-    border-radius: 10px;
-    transition: 0.3s;   
+.email-information:focus {
+  outline: 0;
+  border: 1px solid #7FB3D5 ;
 }
-.button-login:hover{
-    background-color: rgb(0, 0, 130);
-    cursor: pointer;
+input::placeholder {
+  opacity: 0.7;
+  padding: 20px;
 }
-.line{
-    align-items: center;
-    border-bottom: 1px solid #0D0D0E;
-    display: flex;
-    margin: 20px 16px;
-    text-align: center;
+.button-login {
+  background-color: #2980B9;
+  margin-top: 10px;
+  font-size: 17px;
+  width: 330px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+  text-shadow: 0px 3px 3px rgba(255,255,255,0.5), 0px 0px 0px rgba(206,89,55,0);
 }
-.a-tag{
-    margin: 20px;
+.button-login:hover {
+  background-color: #1665CE;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
 }
-.acc-button{
-    background-color: rgb(0, 110, 0);
-    width: 150px;
-    height: 40px;
-    color: white;
-    border-radius: 10px;
+.line {
+  align-items: center;
+  border-bottom: 2px solid #D9D9DD;
+  display: flex;
+  margin: 20px 16px;
+  text-align: center;
 }
-.acc-button:hover{
-    background-color: rgb(0, 130, 0);
-    cursor: pointer;
+.a-tag {
+  margin: 15px;
+  font-size: 16px;
+}
+.a-tag:hover{
+    text-decoration: underline;
+}
+.acc-button {
+  background-color: #27AE60;
+  width: 180px;
+  height: 45px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+.acc-button:hover {
+  background-color: #229954;
+  cursor: pointer;
 }
