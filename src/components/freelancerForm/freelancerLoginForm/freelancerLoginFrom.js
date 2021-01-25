@@ -29,4 +29,4 @@ function FreelancerLoginFrom(props) {
         </div>
     )
 }
-export default FreelancerLoginFrom;
+export default FreelancerLoginFrom; 
