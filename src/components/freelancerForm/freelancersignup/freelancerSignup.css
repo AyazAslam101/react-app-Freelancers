@@ -83,3 +83,7 @@ input::placeholder {
 .signup-a-tag:hover{
     text-decoration: underline;
 }
+
+.uploader {
+  margin-left: 160px;
+}

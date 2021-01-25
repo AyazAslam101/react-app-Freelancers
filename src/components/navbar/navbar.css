@@ -79,3 +79,6 @@ input{
     align-items: center;
     transition: 0.4s;
 }
+.dash-board {
+    margin-top: 25px;
+}
