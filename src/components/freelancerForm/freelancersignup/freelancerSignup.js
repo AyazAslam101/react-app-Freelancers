@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import '../freelancersignup/freelancerSignup.css'
 import { useSelector} from 'react-redux'
 import Uploader from '../../photoUploader/photoUploader'
+import {message} from 'antd'
 // import {useHistory} from 'react-router-dom'
 
 
@@ -36,12 +37,16 @@ const  FreelancerSignup =(props) => {
        let a = props.addUser(userInput)
        props.handleUser(userInput)
        if(a){
-           alert("Signed up successfully")
+        message
+        .loading('Action in progress..', 2.5)
+        .then(() => message.success('Loading finished', 2.5));
          }else{
-           alert("email already taken")
+          message
+          .loading('Action in progress..', 2.5)
+          .then(() => message.warn('Email already taken', 2.5));
          }
       }else{
-        alert("all fields are required to be filled")
+        message.error("Please fill every input")
       }
 
     let showUploader = showNewForm.showPhotoUploader;

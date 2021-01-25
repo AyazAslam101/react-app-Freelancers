@@ -13,9 +13,9 @@ function FreelancerLoginFrom(props) {
     let users = data.users
 
     const addUser = (emailData)=>{
-        const filter = data.users.filter((elemnet)=> elemnet.email === emailData.email )
+        const filter = data.users.filter((element)=> element.email === emailData.email )
         if(filter.lenght > 0){
-            alert("email taken")
+            message.warn("email taken")
             return false
         }else{
             setloginData({...loginData , users })
