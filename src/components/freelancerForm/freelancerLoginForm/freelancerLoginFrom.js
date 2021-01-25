@@ -3,12 +3,31 @@ import {Button , Input} from 'antd'
 import Aux from "../../../hoc/Auxiliary"
 import './freelancerLogin.css'
 import SignUpModal from '../../signUpModal/signUpModal'
-import {Modal} from 'antd'
+import {Modal , message} from 'antd'
 import {useSelector} from 'react-redux'
 import {useHistory } from 'react-router-dom'
 function FreelancerLoginFrom(props) {
 
     let data = useSelector(state=>state.userDetails)
+
+    let users = data.users
+
+    const addUser = (emailData)=>{
+        const filter = data.users.filter((elemnet)=> elemnet.email === emailData.email )
+        if(filter.lenght > 0){
+            alert("email taken")
+            return false
+        }else{
+            setloginData({...loginData , users })
+        }
+    }
+
+    // const success = () => {
+    //     message
+    //       .loading('Action in progress..', 2.5)
+    //       .then(() => message.success('Loading finished', 2.5))
+    //       .then(() => message.info('Loading finished is finished', 2.5));
+    //   };
     
     const history = useHistory()
     const [loginData, setloginData] = useState({
@@ -18,14 +37,19 @@ function FreelancerLoginFrom(props) {
     const goToHomePage =(e)=>{
         e.preventDefault()
         console.log(data.users);
-        let result = data.users.find((elemnet) => {
-            return (elemnet.email === loginData.email && elemnet.password === loginData.password)
+        let result = data.users.find((element) => {
+            return (element.email === loginData.email && element.password === loginData.password)
         })
+        console.log(result)
         if(result){
-            props.showSearch()
             history.push('/home')
+            message
+            .loading('Action in progress..', 2.5)
+            .then(() => message.success('Loading finished', 2.5));
         }else{
-            alert("user email or password is wrong")
+            message
+            .loading('Action in progress..', 2.5)
+            .then(()=> message.warning('Email or Password is wrong' , 2.5))
         }
     }
     const onChangeHandler = (e)=>{
@@ -36,9 +60,8 @@ function FreelancerLoginFrom(props) {
     
     return (
         <Aux>
-
-            <form onSubmit={goToHomePage}>
-                <div className="login-form">
+            <div className="login-form">
+            <form onSubmit={goToHomePage} >
                 <h4>LOGIN FORM</h4>
             <div className="login-information">
             <Input className="email-information" type={Text} placeholder="Email Adress or phone number" id="email" onChange={onChangeHandler}></Input>
@@ -46,24 +69,26 @@ function FreelancerLoginFrom(props) {
             onChange={onChangeHandler}></Input>
             </div>
             <div className="login-button">
-            <button className="button-login" 
+            <button type='submit' className="button-login" 
             onSubmit={goToHomePage} 
+            // onClick={success}
             >Login in</button>
             </div>
             <div className="a-tag"><Button>Forgotten Password?</Button></div>
             <div className="line">
             </div>
+            </form>
                 <div>
                 <button className="acc-button"
                 onClick={props.showModal}>Create New Account</button>
                 </div>
-            </div>
-            </form>
             <Modal  visible={props.isModalVisible} onOk={props.handleOk} onCancel={props.handleCancel} footer={null}>
                 <div className="signup-style-in-modal">
-                    <SignUpModal handleUserData={props.handleUser} /> 
+                    <SignUpModal handleUserData={props.handleUser} 
+                    addUser={addUser} /> 
                 </div>
             </Modal>
+        </div>
         </Aux>
     )
 }

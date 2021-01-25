@@ -26,10 +26,24 @@ const  FreelancerSignup =(props) => {
  const pushingDataHandler = (data)=>{
    setUserInput({...userInput ,data})
  }
+
   
   const handleSubmit = (e) =>{
-    e.preventDefault()
-    props.handleUser(userInput)
+   e.preventDefault()
+    
+
+    if(userInput.name && userInput.email && userInput.password ){
+       let a = props.addUser(userInput)
+       props.handleUser(userInput)
+       if(a){
+           alert("Signed up successfully")
+         }else{
+           alert("email already taken")
+         }
+      }else{
+        alert("all fields are required to be filled")
+      }
+
     let showUploader = showNewForm.showPhotoUploader;
     setshowNewForm({
       showPhotoUploader : !showUploader
