@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Upload, message , Button } from 'antd';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
+import "./photoUploader.css"
 
 function getBase64(img, callback) {
     const reader = new FileReader();
@@ -56,7 +57,7 @@ function PhotoUploader(props) {
 
 );
     return (
-        <div>
+        <div classname="photo-uploader">
             <Upload
                 name="avatar"
                 listType="picture-card"
@@ -67,7 +68,7 @@ function PhotoUploader(props) {
                 onChange={handleChange}
                
             >
-                {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} id="img" /> : uploadButton}
+                {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%',display: 'inline-flex'}} id="img" /> : uploadButton}
             </Upload>
             <Button  onClick ={() => {pushingDataHandler(uploadUrl.imageUrl)}}>upload</Button>
         </div>

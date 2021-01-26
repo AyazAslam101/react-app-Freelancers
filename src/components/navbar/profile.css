@@ -1,0 +1,29 @@
+.Profile{
+    background-color: #bdbdba;
+    width: 320px;
+    height: 3    00px;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    padding: 25px;
+    font-style:italic;
+ }
+ .user-work{
+     opacity:0.7;
+     font-weight: 500;
+     margin-top: 2px;
+ }
+.profile-h2{
+ margin-top: -11px;
+ /* margin-bottom: -1px; */
+
+ }
+ .user-information{
+     font-style:italic;
+     font-size: 15px;
+ }
+ .img-profile{
+     width: 110px;
+     border-radius: 60px;
+     margin: auto;
+ }

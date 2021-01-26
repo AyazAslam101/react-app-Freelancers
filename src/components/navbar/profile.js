@@ -1,69 +1,30 @@
-import React , {useState} from 'react'
-import { Menu, Button } from 'antd';
-import {
-  AppstoreOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  PieChartOutlined,
-  DesktopOutlined,
-  ContainerOutlined,
-  MailOutlined,
-} from '@ant-design/icons';
+import React from "react";
+import './profile.css'
+import Logo from "./images/2X4thv_T_400x400.jpg";
 
-const { SubMenu } = Menu;
 
-const  Profile = ()=>{
-   const [collapes ,setcollapes] = useState({
-    collapsed: false,
-  });
-  
+function Profile() {
 
-  const toggleCollapsed = () => {
-    setcollapes({
-      collapsed: !collapes.collapsed,
-    });
-  };
-
-  return(
-      <div className="dash-board">
-        <div style={{ width: 256 }}>
-            <Button type="light" onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
-            {React.createElement(collapes.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
-            </Button>
-            <Menu
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
-            mode="inline"
-            theme="light"
-            inlineCollapsed={collapes.collapsed}
-            >
-            <Menu.Item key="1" icon={<PieChartOutlined />}>
-                Option 1
-            </Menu.Item>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
-                Option 2
-            </Menu.Item>
-            <Menu.Item key="3" icon={<ContainerOutlined />}>
-                Option 3
-            </Menu.Item>
-            <SubMenu key="sub1" icon={<MailOutlined />} title="Navigation One">
-                <Menu.Item key="5">Option 5</Menu.Item>
-                <Menu.Item key="6">Option 6</Menu.Item>
-                <Menu.Item key="7">Option 7</Menu.Item>
-                <Menu.Item key="8">Option 8</Menu.Item>
-            </SubMenu>
-            <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
-                <Menu.Item key="9">Option 9</Menu.Item>
-                <Menu.Item key="10">Option 10</Menu.Item>
-                <SubMenu key="sub3" title="Submenu">
-                <Menu.Item key="11">Option 11</Menu.Item>
-                <Menu.Item key="12">Option 12</Menu.Item>
-                </SubMenu>
-            </SubMenu>
-            </Menu>
+  return (
+    <div className="Profile">
+      <div className="Profile-container">
+        <div className="img-profile">
+          <img src={Logo}  className="img-profile"></img>
+        </div>
+        <div className="user-names">
+          <p className="user-work">Front-end Developer</p>
+          <h2 className="profile-h2">Ayaz Dattuu</h2>
+        </div>
+        <div className="user-information">
+          <p>The first company founded services was the Computer Usage Company, in 1955.</p>
+          <p>Experience more than 6 months</p>
+        </div>
+        <div className="button">
+          <button className="profile-view-more">View More</button>
         </div>
       </div>
-    );
+    </div>
+  );
 }
 
-export default Profile;
+export default Profile;  

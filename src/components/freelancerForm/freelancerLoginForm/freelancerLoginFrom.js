@@ -30,7 +30,7 @@ function FreelancerLoginFrom(props) {
     
     return (
         <div className="login-form">
-          {/* <h4>Login</h4> */}
+          {/* <h4>Login</h4>f */}
         <div className="login-information">
         <input className="email-information" type={Text} placeholder="Email Adress or phone number"></input>
         <input  className="password-information" type="password" placeholder="password"></input>
