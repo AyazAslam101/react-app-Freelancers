@@ -3,7 +3,7 @@ import {Button , Input} from 'antd'
 import Aux from "../../../hoc/Auxiliary"
 import './freelancerLogin.css'
 import SignUpModal from '../../signUpModal/signUpModal'
-import {Modal , message} from 'antd'
+import {Modal , message , Form} from 'antd'
 import {useSelector} from 'react-redux'
 import {useHistory } from 'react-router-dom'
 function FreelancerLoginFrom(props) {
@@ -61,12 +61,29 @@ function FreelancerLoginFrom(props) {
     return (
         <Aux>
             <div className="login-form">
-            <form onSubmit={goToHomePage} >
+            <Form onSubmit={goToHomePage} >
                 <h4>LOGIN FORM</h4>
             <div className="login-information">
-            <Input className="email-information" type={Text} placeholder="Email Adress or phone number" id="email" onChange={onChangeHandler}></Input>
-            <Input  className="password-information" type="Password" placeholder="password" id="password"
-            onChange={onChangeHandler}></Input>
+                <Form.Item
+                name="Email"
+                rules={[
+                    {
+                      required : true,
+                      message : 'Please input your Email!'
+                    }
+                  ]}>
+                    <Input className="email-information" type={Text} placeholder="Email Adress or phone number" id="email" onChange={onChangeHandler}></Input>
+                </Form.Item>
+                <Form.Item
+                name="Password"
+                rules={[
+                    {
+                      required : true,
+                      message : 'Please input valid Password!'
+                    }
+                  ]}>
+                    <Input  className="password-information" type="Password" placeholder="password" id="password"onChange={onChangeHandler}></Input>
+                </Form.Item>
             </div>
             <div className="login-button">
             <button type='submit' className="button-login" 
@@ -77,7 +94,7 @@ function FreelancerLoginFrom(props) {
             <div className="a-tag"><Button>Forgotten Password?</Button></div>
             <div className="line">
             </div>
-            </form>
+            </Form>
                 <div>
                 <button className="acc-button"
                 onClick={props.showModal}>Create New Account</button>
