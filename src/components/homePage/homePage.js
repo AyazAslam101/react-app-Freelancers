@@ -2,6 +2,7 @@ import React from "react";
 import './homePage.css'
 import {Logo} from "./images/2X4thv_T_400x400.jpg";
 function homePage() {
+<<<<<<< HEAD
   return (
     <div className="Profile">
       <div className="Profile-container">
@@ -18,6 +19,11 @@ function homePage() {
         </div>
         <div className="">
           <button>View More</button>
+=======
+    return (
+        <div>
+            
+>>>>>>> 4a3a58a16d3b5c9a7f6c20b8bfc38bd3a6953d34
         </div>
       </div>
     </div>
