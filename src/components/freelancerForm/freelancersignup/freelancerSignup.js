@@ -87,7 +87,7 @@ const  FreelancerSignup =(props) => {
 
   // console.log(user)
     return (
-      <Form onSubmit={handleSubmit}
+      <form onSubmit={handleSubmit}
       {...layout}
       name="basic"
       initialValues={{
@@ -99,52 +99,13 @@ const  FreelancerSignup =(props) => {
         <div className="signup-form"  >
           <h4>SIGNUP FORM</h4>
           <div className="signup-information">
-            <Form.Item
-            style={{marginLeft : "35px"}}
-              name="username"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please input your name!',
-                },
-              ]}>
+            
               <Input onChange={handleData} className="signup-email-information" type="text" placeholder="name"
                 id="name"></Input>
-            </Form.Item>
-            <Form.Item
-            style={{marginLeft : "35px"}}
-            name="Email"
-            rules={[
-              {
-                required : true,
-                message : 'Please input your Email!'
-              }
-            ]}>
               <Input onChange={handleData} className="signup-password-information" type="email" placeholder="Email" id="email" ></Input>
-            </Form.Item>
-            <Form.Item 
-            style={{marginLeft : "35px"}}
-            name="Password"
-            rules={[
-              {
-                required : true,
-                message : 'Please input your Password!'
-              }
-            ]}>
               <Input onChange={handleData} className="signup-password-information" type="password"
-              placeholder="password" id="password" ></Input>            
-            </Form.Item>
-            <Form.Item
-            style={{marginLeft : "35px"}}
-            name="Comform Password"
-            rules={[
-              {
-                required : true,
-                message : 'Please input valid Password!'
-              }
-            ]}>
+              placeholder="password" id="password" ></Input>
                 <Input onChange={handleData} className="signup-password-information" type="password" placeholder="Confirm password" id="password" ></Input>
-            </Form.Item>
           </div>
         <div className="signup-login-button">
           <button className="signup-button-login" onSubmit={ handleSubmit}>SignUp</button>
@@ -154,7 +115,7 @@ const  FreelancerSignup =(props) => {
         pushingDataHandler={pushingDataHandler} 
         /></div>
 
-      </Form>
+      </form>
     )
 }
 
