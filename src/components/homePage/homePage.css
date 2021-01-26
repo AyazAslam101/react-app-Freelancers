@@ -1,0 +1,19 @@
+.Profile{
+   background-color: #bdbdba;
+   width: 320px;
+   height: 300px;
+   margin: auto;
+   text-align: center;
+   border-radius: 10px;
+}
+.user-work{
+    opacity:0.7;
+    font-weight: 500;
+}
+h2{
+margin-top: -8px;
+}
+img{
+    width: 100px;
+    border-radius: ;
+}

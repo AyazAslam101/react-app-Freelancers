@@ -10,6 +10,8 @@ import Title from "./title/title"
 import './navbar.css'
 import Aux from '../../hoc/Auxiliary'
 import Profile from './profile'
+import ProfileDrawer from "../drawer/drawer"
+
 
 function navbar(props) {
 
@@ -25,6 +27,7 @@ function navbar(props) {
             {menu}
             <NavLink to="/home"><Title /></NavLink>
             <NavItems search={props.search} />
+            <ProfileDrawer />
             </div>
             
         </Aux>

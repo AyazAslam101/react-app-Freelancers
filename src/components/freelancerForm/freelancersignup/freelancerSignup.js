@@ -59,10 +59,9 @@ const  FreelancerSignup =(props) => {
         <div className="signup-login-button">
           <button className="signup-button-login" onSubmit={ handleSubmit}>SignUp</button>
         </div>
-        </div>
         <div className="uploader"><Uploader 
-        pushingDataHandler={pushingDataHandler} /></div>
-
+        pushingDataHandler={pushingDataHandler} />s</div>
+        </div>
       </form>
     )
 }
