@@ -1,11 +1,25 @@
 import React, {useState} from 'react';
 // import {useSelector} from 'react-redux';
 import '../freelancersignup/freelancerSignup.css'
+import {Input , Form} from 'antd'
 import { useSelector} from 'react-redux'
-import {message , Input} from 'antd'
 import Uploader from '../../photoUploader/photoUploader'
+import {message} from 'antd'
 // import {useHistory} from 'react-router-dom'
-
+const layout = {
+  labelCol: {
+    span: 8,
+  },
+  wrapperCol: {
+    span: 16,
+  },
+};
+const tailLayout = {
+  wrapperCol: {
+    offset: 8,
+    span: 16,
+  },
+};
 
 const  FreelancerSignup =(props) => {
 
@@ -27,6 +41,7 @@ const  FreelancerSignup =(props) => {
  const pushingDataHandler = (data)=>{
    setUserInput({...userInput ,data})
  }
+
   
   const handleSubmit = (e) =>{
    e.preventDefault()
@@ -60,11 +75,26 @@ const  FreelancerSignup =(props) => {
       [event.target.id] : event.target.value
     })
   }
+
+  const onFinish = (values) => {
+    console.log('Success:', values);
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
   
 
   // console.log(user)
     return (
       <form onSubmit={handleSubmit}
+      {...layout}
+      name="basic"
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
       >
         <div className="signup-form"  >
           <h4>SIGNUP FORM</h4>
@@ -80,9 +110,11 @@ const  FreelancerSignup =(props) => {
         <div className="signup-login-button">
           <button className="signup-button-login" onSubmit={ handleSubmit}>SignUp</button>
         </div>
-        <div className="uploader"><Uploader 
-        pushingDataHandler={pushingDataHandler} />s</div>
         </div>
+        <div className="uploader"><Uploader 
+        pushingDataHandler={pushingDataHandler} 
+        /></div>
+
       </form>
     )
 }

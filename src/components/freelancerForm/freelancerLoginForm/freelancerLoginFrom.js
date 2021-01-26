@@ -1,10 +1,11 @@
 import React,{useState} from 'react'
-import { Modal, Button , message , Input } from 'antd';
-import './freelancerLogin.css'
-import {useHistory } from 'react-router-dom'
+import {Button , Input} from 'antd'
 import Aux from "../../../hoc/Auxiliary"
+import './freelancerLogin.css'
+import SignUpModal from '../../signUpModal/signUpModal'
+import {Modal , message , Form} from 'antd'
 import {useSelector} from 'react-redux'
-import SignUpModal from "../../signUpModal/signUpModal"
+import {useHistory } from 'react-router-dom'
 function FreelancerLoginFrom(props) {
 
     let data = useSelector(state => state.userDetails)
@@ -20,14 +21,11 @@ function FreelancerLoginFrom(props) {
             setloginData({...loginData , users })
         }
     }
+    
+    const history = useHistory()
     const [loginData, setloginData] = useState({
         email : "",
         password : ""
-    })
-    
-    const history = useHistory()
-    const [homePage] = useState({
-        routerpage:true
     })
     const goToHomePage =(e)=>{
         e.preventDefault()
@@ -37,37 +35,28 @@ function FreelancerLoginFrom(props) {
         })
         if(result){
             history.push('/home')
+            message
+            .loading('Action in progress..', 2.5)
+            .then(() => message.success('Loading finished', 2.5));
+        }else{
+            message
+            .loading('Action in progress..', 2.5)
+            .then(()=> message.warning('Email or Password is wrong' , 2.5))
         }
     }
-    const onChangeHandler=(e)=>{
-        setloginData({
-            ...loginData,
-            [e.target.id] : e.target.value
-        })
+    const onChangeHandler = (e)=>{
+        setloginData({...loginData , 
+        [e.target.id] : e.target.value
+    })
     }
-
-    const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
-
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
     
     return (
         <Aux>
-
             <div className="login-form">
             <form onSubmit={goToHomePage} >
                 <h4>LOGIN FORM</h4>
             <div className="login-information">
-                    <Input className="email-information" type="email" placeholder="Email Adress or phone number" id="email" onChange={onChangeHandler}></Input>
+                    <Input className="email-information" type="email" placeholder="Email Adress or phone number" id="email" onChange={onChangeHandler} ></Input>
                     <Input  className="password-information" type="password" placeholder="password" id="password"onChange={onChangeHandler}></Input>
             </div>
             <div className="login-button">
@@ -86,12 +75,12 @@ function FreelancerLoginFrom(props) {
                 </div>
             <Modal  visible={props.isModalVisible} onOk={props.handleOk} onCancel={props.handleCancel} footer={null}>
                 <div className="signup-style-in-modal">
-                    <SignUpModal handleUserData={props.handleUser}/>
+                    <SignUpModal handleUserData={props.handleUser} 
+                    addUser={addUser} /> 
                 </div>
-             </Modal>
-            </div>
+            </Modal>
+        </div>
         </Aux>
-    
     )
 }
 export default FreelancerLoginFrom;
