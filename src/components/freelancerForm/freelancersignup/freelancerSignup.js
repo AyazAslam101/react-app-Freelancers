@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 // import {useSelector} from 'react-redux';
 import '../freelancersignup/freelancerSignup.css'
 import { useSelector} from 'react-redux'
-import {message} from 'antd'
+import {message , Input} from 'antd'
 import Uploader from '../../photoUploader/photoUploader'
 // import {useHistory} from 'react-router-dom'
 

@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
-import { Modal, Button , message } from 'antd';
+import { Modal, Button , message , Input } from 'antd';
 import './freelancerLogin.css'
 import {useHistory } from 'react-router-dom'
+import Aux from "../../../hoc/Auxiliary"
+import {useSelector} from 'react-redux'
 import SignUpModal from "../../signUpModal/signUpModal"
 function FreelancerLoginFrom(props) {
 
@@ -37,7 +39,12 @@ function FreelancerLoginFrom(props) {
             history.push('/home')
         }
     }
-    const 
+    const onChangeHandler=(e)=>{
+        setloginData({
+            ...loginData,
+            [e.target.id] : e.target.value
+        })
+    }
 
     const [isModalVisible, setIsModalVisible] = useState(false);
 
