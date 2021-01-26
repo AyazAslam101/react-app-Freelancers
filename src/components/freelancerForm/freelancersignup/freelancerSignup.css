@@ -1,7 +1,7 @@
 @import "~antd/dist/antd.css";
 .signup-form {
   width: 400px;
-  height: 400px;
+  height: 500px;
   margin: auto;
   text-align: center;
   background-color: #faf9f9;
@@ -82,4 +82,9 @@ input::placeholder {
 }
 .signup-a-tag:hover{
     text-decoration: underline;
+}
+
+.uploader {
+  margin-left: 170px;
+  margin-top: 100px;
 }

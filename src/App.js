@@ -1,5 +1,5 @@
-import React,  {useState , useEffect} from 'react'
-import {useSelector , useDispatch} from 'react-redux';
+import React,  {useState } from 'react'
+import {useDispatch} from 'react-redux';
 import { usersAction} from './action'
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
 import './App.css';
@@ -12,10 +12,10 @@ import getHirePage from './components/getHirePage/getHirePage';
 
 
 function App() {
-  const users = useSelector(state => state.userDetails);
+  
 
   // const [data, setData] = useState([...users])
-  // console.log({users});
+  // console.log({user s});
   const dispatch = useDispatch()
   // // useEffect(()=>{
   // //   setData(
