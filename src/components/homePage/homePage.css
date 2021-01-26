@@ -1,7 +1,7 @@
 .Profile{
    background-color: #bdbdba;
    width: 320px;
-   height: 300px;
+   height: 3    00px;
    margin: auto;
    text-align: center;
    border-radius: 10px;
@@ -13,7 +13,8 @@
 h2{
 margin-top: -8px;
 }
-img{
+.img-profile{
     width: 100px;
-    border-radius: ;
+    border-radius: 60px;
+    margin: auto;
 }
