@@ -14,12 +14,6 @@ const layout = {
     span: 16,
   },
 };
-const tailLayout = {
-  wrapperCol: {
-    offset: 8,
-    span: 16,
-  },
-};
 
 const  FreelancerSignup =(props) => {
 
@@ -45,18 +39,16 @@ const  FreelancerSignup =(props) => {
   
   const handleSubmit = (e) =>{
    e.preventDefault()
-    
-
     if(userInput.name && userInput.email && userInput.password ){
-       let a = props.handleUser(userInput)
-       if(a){
+      let a = props.handleUser({...userInput, id: Math.floor(Math.random() * 1000)})
+       if(a ){
         message
         .loading('Action in progress..', 2.5)
         .then(() => message.success('Signed up', 2.5));
          }else{
           message
-          .loading('Action in progress..', 2.5)
-          .then(() => message.warn('Email already taken', 2.5));
+          .loading('Action in progress..', 1.5)
+          .then(() => message.warn('Email Taken', 1.5));
          }
       }else{
         message.error("Please fill every input")

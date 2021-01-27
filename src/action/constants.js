@@ -1,1 +1,2 @@
 export const USER_ACTION = "USERS";
+export const USER_PROFILE_ACTION = "USER_PROFILE"
