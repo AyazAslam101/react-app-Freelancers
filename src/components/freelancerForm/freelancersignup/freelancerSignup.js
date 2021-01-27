@@ -1,10 +1,25 @@
 import React, {useState} from 'react';
 // import {useSelector} from 'react-redux';
 import '../freelancersignup/freelancerSignup.css'
+import {Input , Form} from 'antd'
 import { useSelector} from 'react-redux'
 import Uploader from '../../photoUploader/photoUploader'
+import {message} from 'antd'
 // import {useHistory} from 'react-router-dom'
-
+const layout = {
+  labelCol: {
+    span: 8,
+  },
+  wrapperCol: {
+    span: 16,
+  },
+};
+const tailLayout = {
+  wrapperCol: {
+    offset: 8,
+    span: 16,
+  },
+};
 
 const  FreelancerSignup =(props) => {
 
@@ -26,10 +41,27 @@ const  FreelancerSignup =(props) => {
  const pushingDataHandler = (data)=>{
    setUserInput({...userInput ,data})
  }
+
   
   const handleSubmit = (e) =>{
-    e.preventDefault()
-    props.handleUser(userInput)
+   e.preventDefault()
+    
+
+    if(userInput.name && userInput.email && userInput.password ){
+       let a = props.handleUser(userInput)
+       if(a){
+        message
+        .loading('Action in progress..', 2.5)
+        .then(() => message.success('Signed up', 2.5));
+         }else{
+          message
+          .loading('Action in progress..', 2.5)
+          .then(() => message.warn('Email already taken', 2.5));
+         }
+      }else{
+        message.error("Please fill every input")
+      }
+
     let showUploader = showNewForm.showPhotoUploader;
     setshowNewForm({
       showPhotoUploader : !showUploader
@@ -43,18 +75,37 @@ const  FreelancerSignup =(props) => {
       [event.target.id] : event.target.value
     })
   }
+
+  const onFinish = (values) => {
+    console.log('Success:', values);
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
   
 
   // console.log(user)
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}
+      {...layout}
+      name="basic"
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+      >
         <div className="signup-form"  >
           <h4>SIGNUP FORM</h4>
           <div className="signup-information">
-            <input onChange={handleData} className="signup-email-information" type="text" placeholder="name" id="name"></input>
-            <input onChange={handleData} className="signup-password-information" type="text" placeholder="Email" id="email" ></input>
-            <input onChange={handleData} className="signup-password-information" type="password" placeholder="password" id="password" ></input>
-            <input onChange={handleData} className="signup-password-information" type="password" placeholder="Confirm password" id="password" ></input>
+            
+              <Input onChange={handleData} className="signup-email-information" type="text" placeholder="name"
+                id="name"></Input>
+              <Input onChange={handleData} className="signup-password-information" type="email" placeholder="Email" id="email" ></Input>
+              <Input onChange={handleData} className="signup-password-information" type="password"
+              placeholder="password" id="password" ></Input>
+                <Input onChange={handleData} className="signup-password-information" type="password" placeholder="Confirm password" id="password" ></Input>
           </div>
          <div className="uploader"><Uploader 
         pushingDataHandler={pushingDataHandler} /></div>
@@ -62,6 +113,7 @@ const  FreelancerSignup =(props) => {
           <button className="signup-button-login" onSubmit={ handleSubmit}>SignUp</button>
         </div>
         </div>
+
       </form>
     )
 }
