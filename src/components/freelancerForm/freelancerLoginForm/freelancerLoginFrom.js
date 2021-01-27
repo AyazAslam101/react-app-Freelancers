@@ -28,16 +28,17 @@ function FreelancerLoginFrom(props) {
         password : ""
     })
     const goToHomePage =(e)=>{
+        props.handleProfileData(loginData)
         e.preventDefault()
-        console.log(e, 'console here')
         let result = data.users.find((element) => {
             return (element.email === loginData.email && element.password === loginData.password)
         })
         if(result){
+            props.getUserData(result)
             history.push('/home')
             message
             .loading('Action in progress..', 2.5)
-            .then(() => message.success('Loading finished', 2.5));
+            .then(() => message.success('Loading finished', 1.5));
         }else{
             message
             .loading('Action in progress..', 2.5)

@@ -1,6 +1,6 @@
 import React,  {useState } from 'react'
 import {useDispatch} from 'react-redux';
-import { usersAction} from './action'
+import { usersAction , userProfileAction} from './action'
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
 import './App.css';
 import Navbar from './components/navbar/navbar'
@@ -28,7 +28,13 @@ function App() {
   //   localStorage.setItem("name" , JSON.stringify(data))
   // } , [data])
 
-  const [searchBarRender , setSearchBarRender] = useState({
+
+  const [profileData , setprofileData] = useState({
+    email : "",
+    password : ""
+  })
+
+  const [viewProfileButton , setviewProfileButton] = useState({
     showSearch : false
 })
 const [isModalVisible, setIsModalVisible] = useState(false);
@@ -45,29 +51,37 @@ const handleCancel = () => {
   setIsModalVisible(false);
 };
 
-const showSearchHandler = ()=>{
-  let show = searchBarRender.showSeacrh
-  setSearchBarRender({
+const viewProfileHandler = ()=>{
+  let show = viewProfileButton.showSeacrh
+  setviewProfileButton({
     showSearch: !show
   })
 }
+const handleProfileData =(data)=>{
+  dispatch(userProfileAction(data))
+}
 const handleUserData = (userData)=>{
   dispatch(usersAction(userData))
+}
+const getUserData = (userData)=>{
+  setprofileData({ ...profileData , userData})
 }
 
   return (
     <div className="App">
       <Router>
-        <Navbar search={searchBarRender} />
+        <Navbar search={viewProfileHandler} />
         <Switch>
           <Route path="/" exact component={FreelancerLogin} ><FreelancerLogin 
-          showSearch={showSearchHandler}
+          showSearch={viewProfileHandler}
           showModal={showModal}
           handleOk={handleOk}
           handleCancel={handleCancel}
           isModalVisible={isModalVisible}
+          getUserData={getUserData}
+          handleProfileData={handleProfileData}
           handleUser={handleUserData}/></Route>
-          <Route path="/home" exact component={HomePage}/>
+          <Route path="/home" exact component={HomePage}><HomePage a={profileData}></HomePage></Route>
           <Route path="/hire" exact component={hirePage}/>
           <Route path="/getHire" exact component={getHirePage}/>
         </Switch>

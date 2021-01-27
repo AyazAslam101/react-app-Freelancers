@@ -1,4 +1,5 @@
 import React , {useState} from 'react'
+import HomePage from '../homePage/homePage'
 import Profile from '../navbar/profile'
 import { Drawer, Button,  Space } from 'antd';
 
@@ -38,7 +39,7 @@ import { Drawer, Button,  Space } from 'antd';
           visible={visible}
           key={placement}
         >
-         <Profile />  
+            <Profile />
         </Drawer>
       </>
     );

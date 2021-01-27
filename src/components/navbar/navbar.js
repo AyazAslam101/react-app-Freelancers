@@ -24,7 +24,6 @@ function navbar(props) {
     return (
         <Aux>
             <div className="nav">
-            {menu}
             <NavLink to="/home"><Title /></NavLink>
             <NavItems search={props.search} />
             <ProfileDrawer />

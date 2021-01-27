@@ -1,26 +1,31 @@
 import React from "react";
 import './profile.css'
-import Logo from "./images/2X4thv_T_400x400.jpg";
+// import Logo from "./images/2X4thv_T_400x400.jpg";
+import {useSelector} from "react-redux"
+function Profile(props) {
 
-
-function Profile() {
+  const data  = useSelector(state => state.userDetails)
+    //  console.log(data.user, "listData")
+  let approve = data.users.find((element)=>{
+    return element.email === data.userProfile.email && element.password === data.userProfile.password
+  })
+  // console.log(approve.data)
 
   return (
     <div className="Profile">
       <div className="Profile-container">
         <div className="img-profile">
-          <img src={Logo}  className="img-profile"></img>
+          <img src={approve.data}alt=""/>
         </div>
         <div className="user-names">
           <p className="user-work">Front-end Developer</p>
-          <h2 className="profile-h2">Ayaz Dattuu</h2>
+          <h1>{approve.name}</h1>
         </div>
         <div className="user-information">
-          <p>The first company founded services was the Computer Usage Company, in 1955.</p>
-          <p>Experience more than 6 months</p>
+          <p>{approve.description}dnauifnfioamcninvc dhaizc  uWNSC DUVNANW D</p>
         </div>
-        <div className="button">
-          <button className="profile-view-more">View More</button>
+        <div className="">
+          <button>View More</button>
         </div>
       </div>
     </div>
