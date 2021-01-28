@@ -1,78 +1,46 @@
-import React, { useState } from 'react'
-import { Upload, message , Button } from 'antd';
-import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import "./photoUploader.css"
-
-function getBase64(img, callback) {
-    const reader = new FileReader();
-    reader.addEventListener('load', () => callback(reader.result));
-    reader.readAsDataURL(img);
-}
-
-function beforeUpload(file) {
-    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-    if (!isJpgOrPng) {
-        message.error('You can only upload JPG/PNG file!');
-    }
-    const isLt2M = file.size / 1024 / 1024 < 2;
-    if (!isLt2M) {
-        message.error('Image must smaller than 2MB!');
-    }
-    return isJpgOrPng && isLt2M;
-}
+import React, { useState } from "react";
+import { Button } from "antd";
 
 function PhotoUploader(props) {
-    const [newUploader, setnewUploader] = useState({
-        loading: false
-    })
-    const [uploadUrl, setuploadUrl] = useState({})
+  const [BaseImage, setBaseImage] = useState("");
+  const uploadImage = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    setBaseImage(base64);
+  };
 
-    const pushingDataHandler= (data)=>{
-        const newUrl = uploadUrl.imageUrl
-        if(data == newUrl){
-            props.pushingDataHandler(data)
-        }
-    }
-    const handleChange = info => {
-        console.log(info)
-        if (info.file.status === 'uploading') {
-            setnewUploader({ loading: true });
-            return;
-        }
-        if (info.file.status === 'done') {
-            // Get this url from response in real world.
-            getBase64(info.file.originFileObj, imageUrl =>
-                setuploadUrl({
-                    imageUrl
-                }),
-            );
-        }
-    };
-    const { loading, imageUrl } = uploadUrl;
-    const uploadButton = (
-      <div>
-        {loading ? <LoadingOutlined /> : <PlusOutlined />}
-        <div style={{ marginTop: 8 }}>Upload</div>
-      </div>
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
 
-);
-    return (
-        <div classname="photo-uploader">
-            <Upload
-                name="avatar"
-                listType="picture-card"
-                className="avatar-uploader"
-                showUploadList={false}
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                beforeUpload={beforeUpload}
-                onChange={handleChange}
-               
-            >
-                {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%',display: 'inline-flex'}} id="img" /> : uploadButton}
-            </Upload>
-            <Button  onClick ={() => {pushingDataHandler(uploadUrl.imageUrl)}}>upload</Button>
-        </div>
-    )
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+  const handleImageData = (e) => {
+    e.preventDefault();
+    props.pushingDataHandler(BaseImage);
+  };
+
+  return (
+    <div id="App">
+      <input
+        type="file"
+        id="image"
+        onChange={(e) => {
+          uploadImage(e);
+        }}
+      />
+      <img src={BaseImage} width="110px;" border-radius="60px" margin="auto" />
+      <Button onClick={handleImageData}>Save Image</Button>
+    </div>
+  );
 }
 
 export default PhotoUploader;
