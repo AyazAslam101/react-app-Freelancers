@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import { Upload, message , Button } from 'antd';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
+import "./photoUploader.css"
 
 function getBase64(img, callback) {
     const reader = new FileReader();
     reader.addEventListener('load', () => callback(reader.result));
     reader.readAsDataURL(img);
+    console.log(reader)
 }
 
 function beforeUpload(file) {
+    console.log(file.size)
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJpgOrPng) {
         message.error('You can only upload JPG/PNG file!');
     }
-    const isLt2M = file.size / 1024 / 1024 < 2;
+    const isLt2M = file.size / 1024 / 1024 < 4;
     if (!isLt2M) {
         message.error('Image must smaller than 2MB!');
     }
@@ -56,7 +59,7 @@ function PhotoUploader(props) {
 
 );
     return (
-        <div>
+        <div classname="photo-uploader">
             <Upload
                 name="avatar"
                 listType="picture-card"
@@ -67,9 +70,9 @@ function PhotoUploader(props) {
                 onChange={handleChange}
                
             >
-                {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} id="img" /> : uploadButton}
+                {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%',display: 'inline-flex'}} id="img" /> : uploadButton}
             </Upload>
-            <Button  onClick ={() => {pushingDataHandler(uploadUrl.imageUrl)}}>upload</Button>
+            <Button  onClick ={() => {pushingDataHandler(uploadUrl.imageUrl)}}>Save Image</Button>
         </div>
     )
 }

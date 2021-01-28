@@ -99,13 +99,12 @@ const  FreelancerSignup =(props) => {
               placeholder="password" id="password" ></Input>
                 <Input onChange={handleData} className="signup-password-information" type="password" placeholder="Confirm password" id="password" ></Input>
           </div>
+         <div className="uploader"><Uploader 
+        pushingDataHandler={pushingDataHandler} /></div>
         <div className="signup-login-button">
           <button className="signup-button-login" onSubmit={ handleSubmit}>SignUp</button>
         </div>
         </div>
-        <div className="uploader"><Uploader 
-        pushingDataHandler={pushingDataHandler} 
-        /></div>
 
       </form>
     )

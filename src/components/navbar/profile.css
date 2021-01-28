@@ -5,16 +5,30 @@
     margin: auto;
     text-align: center;
     border-radius: 10px;
+    padding: 25px;
+    font-style:italic;
  }
-.user-work{
+ .user-work{
      opacity:0.7;
      font-weight: 500;
+     margin-top: 2px;
  }
- h2{
- margin-top: -8px;
+.profile-js-h2{
+ margin-top: -11px;
+ /* margin-bottom: -1px; */
+
  }
-.img-profile img{
-     width: 100px;
-     border-radius: 80px;
-     margin: auto;
+ .user-information{
+     font-style:italic;
+     font-size: 15px;
  }
+ .img-profile img {
+    width: 105px;
+    /* border-radius: 55px; */
+    /* margin: auto; */
+    height: 100px;
+    /* background: 100%; */
+    object-fit: cover;
+    border-radius: 90%;
+    background-attachment: fixed;   
+}

@@ -1,10 +1,22 @@
 import React from 'react'
+import {Button , Dropdown} from "antd"
+import Aux from "../../hoc/Auxiliary"
 
 function homePage() {
   return (
-    <div>
-      home page
-    </div>
+    <Aux>
+      <div className="header-container">
+        <div className="header-header">
+          <h1>This is our <span>site</span></h1>
+        </div>
+        <div className="header-text">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius officia hic earum cum et impedit est laboriosam maiores? Expedita at voluptatem nesciunt quia. Illum totam laboriosam sunt quae delectus voluptatem.</p>
+        </div>
+        <div>
+          
+        </div>
+      </div>
+    </Aux>
   )
 }
 
