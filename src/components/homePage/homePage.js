@@ -1,6 +1,6 @@
 import React from 'react'
 import {Button , Dropdown} from "antd"
-import img1 from "../../assets/download(3).jpg"
+// import img1 from "../../assets/download(3).jpg"
 import './homePage.css'
 import Aux from "../../hoc/Auxiliary"
 
@@ -19,11 +19,10 @@ function homePage() {
         </div>
       </div>
       <div className="header-images-container">
-        <img src={img1}></img>   
+        <img></img>   
       </div>
     </Aux>
   )
 }
 
-export default homePage
-
+export default homePage;
