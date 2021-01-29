@@ -25,7 +25,7 @@ function Profile(props) {
         </div>
         <div className="user-information">
           <p>
-            {approve.description}Hello My Name Is Ayaz Dattuu, From Salmanabd
+            {approve.description}Hello My Name Is {approve.name}, From Salmanabd
             Hunza
           </p>
           <p>Experiecne More Than 6 Month</p>
