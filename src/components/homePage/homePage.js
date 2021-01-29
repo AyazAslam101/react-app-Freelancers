@@ -1,5 +1,7 @@
 import React from 'react'
 import {Button , Dropdown} from "antd"
+import img1 from "../../assets/download(3).jpg"
+import './homePage.css'
 import Aux from "../../hoc/Auxiliary"
 
 function homePage() {
@@ -12,9 +14,12 @@ function homePage() {
         <div className="header-text">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius officia hic earum cum et impedit est laboriosam maiores? Expedita at voluptatem nesciunt quia. Illum totam laboriosam sunt quae delectus voluptatem.</p>
         </div>
-        <div>
-          
+        <div className="header-btn">
+          <Button htmlType="button">learn more</Button>
         </div>
+      </div>
+      <div className="header-images-container">
+        <img src={img1}></img>   
       </div>
     </Aux>
   )

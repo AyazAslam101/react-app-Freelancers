@@ -9,16 +9,12 @@ import Title from "./title/title"
 
 import './navbar.css'
 import Aux from '../../hoc/Auxiliary'
-import Profile from './profile'
 import ProfileDrawer from "../drawer/drawer"
 
 
 function navbar(props) {
 
-    let menu = null;
-    if(props.search.showSearch) {
-    menu = <Profile />
-}
+   
 
 
     return (
