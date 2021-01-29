@@ -6,6 +6,7 @@ import Aux from "../../hoc/Auxiliary";
 import Logo1 from "./image3.webp"
 import Logo2 from "./image2.jpg"
 import Animation from './animation/animation'
+import Homecard from './homecard/homecard'
 
 const color = [ "#229954"]
 
@@ -47,7 +48,7 @@ function homePage() {
               <p className="p-clients">Find talent your way</p>
               <p className="p-content">Develop trusted relationships and build your own virtual talent bench for quick project turnarounds or big transformations.</p>
             </div>
-
+            <Homecard/>
           </div>
         </div>
     </Aux>
