@@ -21,7 +21,7 @@ function PhotoUploader(props) {
       fileReader.onerror = (error) => {
         reject(error);
       };
-    });
+    }); 
   };
   const handleImageData = (e) => {
     e.preventDefault();

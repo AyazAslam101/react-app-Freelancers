@@ -29,13 +29,13 @@ function App() {
   // } , [data])
 
 
-  const [profileData , setprofileData] = useState({
-    email : "",
-    password : ""
-  })
+const [profileData , setprofileData] = useState({
+  email : "",
+  password : ""
+})
 
-  const [viewProfileButton , setviewProfileButton] = useState({
-    showSearch : false
+const [viewProfileButton , setviewProfileButton] = useState({
+    showProfile : false
 })
 const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -73,7 +73,7 @@ const getUserData = (userData)=>{
         <Navbar search={viewProfileHandler} />
         <Switch>
           <Route path="/" exact component={FreelancerLogin} ><FreelancerLogin 
-          showSearch={viewProfileHandler}
+          showSearch={viewProfileHandler }
           showModal={showModal}
           handleOk={handleOk}
           handleCancel={handleCancel}

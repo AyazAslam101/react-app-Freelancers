@@ -4,7 +4,6 @@ import Logo from "./images/2X4thv_T_400x400.jpg";
 import { useSelector } from "react-redux";
 function Profile(props) {
   const data = useSelector((state) => state.userDetails);
-  //  console.log(data.user, "listData")
   let approve = data.users.find((element) => {
     return (
       element.email === data.userProfile.email &&
@@ -25,8 +24,7 @@ function Profile(props) {
         </div>
         <div className="user-information">
           <p>
-            {approve.description}Hello My Name Is {approve.name}, From Salmanabd
-            Hunza
+            {approve.description}Hello My Name Is {approve.name}
           </p>
           <p>Experiecne More Than 6 Month</p>
         </div>

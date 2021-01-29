@@ -3,7 +3,7 @@ import { Button, Input } from "antd";
 import Aux from "../../../hoc/Auxiliary";
 import "./freelancerLogin.css";
 import SignUpModal from "../../signUpModal/signUpModal";
-import { Modal, message, Form } from "antd";
+import { Modal, message } from "antd";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 function FreelancerLoginFrom(props) {
