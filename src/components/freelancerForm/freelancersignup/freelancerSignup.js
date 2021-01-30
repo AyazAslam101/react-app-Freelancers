@@ -47,11 +47,11 @@ const FreelancerSignup = (props) => {
       if (a) {
         message
           .loading("Action in progress..", 2.5)
-          .then(() => message.success("Signed up", 2.5));
+          .then(() => message.warn("Email Taken", 2.5));
       } else {
         message
           .loading("Action in progress..", 1.5)
-          .then(() => message.warn("Email Taken", 1.5));
+          .then(() => message.success("Signed up", 1.5));
       }
     } else {
       message.error("Please fill every input");
