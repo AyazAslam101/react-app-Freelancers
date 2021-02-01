@@ -50,6 +50,13 @@ function homePage() {
             </div>
             <Homecard/>
           </div>
+          <div className="navbar-home-page">
+            <div className="">
+            © 2020 - 2021 Freelancer® local Inc.
+            <br/>
+            Owner-Ali-Ayaz
+            </div>
+          </div>
         </div>
     </Aux>
   );

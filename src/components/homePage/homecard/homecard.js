@@ -17,9 +17,11 @@ const homecard = () => {
         In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document
         </Card>
       </Col>
-        <Card title="Card title" >
+      <Col>
+<Card title="Card title" >
         In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document
         </Card>
+      </Col>
     </Row>
   </div>,
         </div>
