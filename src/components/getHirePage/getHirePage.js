@@ -35,6 +35,7 @@ function GetHirePage() {
         return  <Card title={post.title} style={{ width: 400 , height:300 ,marginBottom:30}} hoverable >
             <h3>client's name</h3>
             <p>{post.body}</p>
+            <Button type="link"></Button>
             </Card>
 
 
@@ -44,14 +45,6 @@ function GetHirePage() {
                 <div className="post" style={style}>
                     {posts}
                 </div>
-                <div style={{ flexDirection : "column"}}>
-                    <form style={{ flexDirection : "column", background:"red "}}>
-                        <Input style={{ width : 400 }} />
-                        <TextArea rows={4} style={{width:400}} />
-                        <Button>Post</Button>
-                    </form>
-                </div>
-
             </Aux>
         )
 }
