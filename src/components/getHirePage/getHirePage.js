@@ -1,6 +1,7 @@
 import React , {useEffect , useState} from 'react'
 import axios from "axios"
-import {Card , Input ,Button} from "antd"
+import {Card , Input ,Button , Modal} from "antd"
+import {useHistory} from 'react-router-dom'
 import Aux from "../../hoc/Auxiliary"
 
 const {TextArea} = Input
@@ -21,9 +22,11 @@ const inputstyle = {
 }
 
 function GetHirePage() {
+    const [isModalVisible, setIsModalVisible] = useState(false);
     const [postData , setPostData] = useState({
         post: []
     })
+    const history = useHistory()
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -31,10 +34,24 @@ function GetHirePage() {
             setPostData({post : response.data})
         })
     }, [])
+
+    
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    history.push("./apply-job-page")
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
     const posts = postData.post.map((post)=>{
         return  <Card title={post.title} style={{ width: 400 , height:300 ,marginBottom:30}} hoverable >
             <h3>client's name</h3>
             <p>{post.body}</p>
+            <Button type="link" onClick={showModal}>More details</Button>
             </Card>
 
 
@@ -44,13 +61,11 @@ function GetHirePage() {
                 <div className="post" style={style}>
                     {posts}
                 </div>
-                <div style={{ flexDirection : "column"}}>
-                    <form style={{ flexDirection : "column", background:"red "}}>
-                        <Input style={{ width : 400 }} />
-                        <TextArea rows={4} style={{width:400}} />
-                        <Button>Post</Button>
-                    </form>
-                </div>
+                <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} okText="apply" okType="link" onCancel={handleCancel}>
+                    <h1>hello</h1>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Modal>
 
             </Aux>
         )

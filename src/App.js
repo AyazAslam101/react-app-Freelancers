@@ -8,6 +8,7 @@ import FreelancerLogin from "./components/freelancerForm/freelancerLoginForm/fre
 // import Freelancer from "./components/freelancers/freelancers"
 import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
+import ApplyJobs from './components/freelancers/apply-jobs/applyJobs'
 import getHirePage from './components/getHirePage/getHirePage';
 
 
@@ -81,6 +82,7 @@ const getUserData = (userData)=>{
           getUserData={getUserData}
           handleProfileData={handleProfileData}
           handleUser={handleUserData}/></Route>
+          <Route path ="/apply-job-page" exact component={ApplyJobs}></Route>
           <Route path="/home" exact component={HomePage}><HomePage a={profileData}></HomePage></Route>
           <Route path="/hire" exact component={hirePage}/>
           <Route path="/getHire" exact component={getHirePage}/>
