@@ -4,7 +4,7 @@ import "../freelancersignup/freelancerSignup.css";
 import { Input, Form } from "antd";
 import { useSelector } from "react-redux";
 import Uploader from "../../photoUploader/photoUploader";
-import { message } from "antd";
+import { message , Radio  } from "antd";
 // import {useHistory} from 'react-router-dom'
 const layout = {
   labelCol: {
@@ -14,6 +14,12 @@ const layout = {
     span: 16,
   },
 };
+
+const optionsWithDisabled = [
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Pear', value: 'Pear' },
+  { label: 'Orange', value: 'Orange', disabled: true },
+];
 
 const FreelancerSignup = (props) => {
   const dataUser = useSelector((state) => state.userDetails);
@@ -27,6 +33,17 @@ const FreelancerSignup = (props) => {
     image: "",
     description: "",
   });
+
+  const [radio, setradio] = useState({
+    value4  :"client"
+  })
+
+  const onChange4 = e => {
+    console.log('radio4 checked', e.target.value);
+    this.setState({
+      value4: e.target.value,
+    });
+  };
 
   const [showNewForm, setshowNewForm] = useState({
     showPhotoUploader: false,
@@ -121,6 +138,15 @@ const FreelancerSignup = (props) => {
             placeholder="Confirm password"
             id="password"
           ></Input>
+        </div>
+        <div className="radio">
+        <Radio.Group
+          options={optionsWithDisabled}
+          onChange={onChange4}
+          value={value4}
+          optionType="button"
+          buttonStyle="solid"
+        />
         </div>
         <div className="uploader">
           <Uploader pushingDataHandler={pushingDataHandler} />
