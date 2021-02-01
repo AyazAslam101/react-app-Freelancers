@@ -1,28 +1,65 @@
-import React from 'react'
-import {Button } from "antd"
+import React from "react";
+import { Button } from "antd";
 // import img1 from "../../assets/download(3).jpg"
-import './homePage.css'
-import Aux from "../../hoc/Auxiliary"
+import "./homePage.css";
+import Aux from "../../hoc/Auxiliary";
+import Logo1 from "./image3.webp"
+import Logo2 from "./image2.jpg"
+import Animation from './animation/animation'
+import Homecard from './homecard/homecard'
+
+const color = [ "#229954"]
 
 function homePage() {
   return (
     <Aux>
-      <div className="header-container">
-        <div className="header-header">
-          <h1>This is our <span>site</span></h1>
+      <div className="Home-container">
+        <div className="header-container">
+            <div className="left-container">
+            <div className="header-header">
+            <h1 className="home-h1">
+              This is our <span className="span-home">site</span>
+            </h1>
+          </div>
+          <div className="header-text">
+            <p>
+              Engage the largest network of trusted independent<br/> professionals to
+              unlock the full potential of your<br/> business.
+            </p>
+          </div>
+          <div className="header-btn">
+            <Button className="find-Talent-button" htmlType="button" style={{color : 'white'}}>
+              Find Talent
+            </Button>
+            <Button className="find-work-button" htmlType="button" color={color}>
+              Find Work
+            </Button>
+          </div>
+            </div>
+            <div className="right-container">
+              <img src={Logo1} className="home-img1"></img>
+              <img src={Logo2} className="home-img2"></img>
+          </div>
+          </div>
+          <Animation/>
+          <div id="homePage" className="home-middle-content">
+            <div className="home-content">
+              <h4 className="h4-clients">For Clients</h4>
+              <p className="p-clients">Find talent your way</p>
+              <p className="p-content">Develop trusted relationships and build your own virtual talent bench for quick project turnarounds or big transformations.</p>
+            </div>
+            <Homecard/>
+          </div>
+          <div className="navbar-home-page">
+            <div className="">
+            © 2020 - 2021 Freelancer® local Inc.
+            <br/>
+            Owner-Ali-Ayaz
+            </div>
+          </div>
         </div>
-        <div className="header-text">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius officia hic earum cum et impedit est laboriosam maiores? Expedita at voluptatem nesciunt quia. Illum totam laboriosam sunt quae delectus voluptatem.</p>
-        </div>
-        <div className="header-btn">
-          <Button>learn more</Button>
-        </div>
-      </div>
-      <div className="header-images-container">
-        <img></img>   
-      </div>
     </Aux>
-  )
+  );
 }
 
 export default homePage;

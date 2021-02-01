@@ -7,6 +7,7 @@ function PhotoUploader(props) {
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
     setBaseImage(base64);
+    props.pushingDataHandler(base64)
   };
 
   const convertBase64 = (file) => {
@@ -21,13 +22,8 @@ function PhotoUploader(props) {
       fileReader.onerror = (error) => {
         reject(error);
       };
-    });
+    }); 
   };
-  const handleImageData = (e) => {
-    e.preventDefault();
-    props.pushingDataHandler(BaseImage);
-  };
-
   return (
     <div id="App">
       <input
@@ -38,7 +34,6 @@ function PhotoUploader(props) {
         }}
       />
       <img src={BaseImage} width="110px;" border-radius="60px" margin="auto" />
-      <Button onClick={handleImageData}>Save Image</Button>
     </div>
   );
 }

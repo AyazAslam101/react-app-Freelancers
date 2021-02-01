@@ -1,6 +1,71 @@
-.header-text {
-    width: 500px;
+.Home-contaniner{
+    font-family: var(--font-family-base);
 }
 .header-container{
-    margin-left:  150px;
+   margin-left: 100px;
+   display: flex;
+   height: 30rem;
+}
+.find-Talent-button{
+ margin-right: 6px;
+ color: yellow;
+} 
+.header-header{
+    margin-left: -10px;
+    font-size: 45px;
+    line-height: 70px;
+}
+.header-text{
+    letter-spacing: -.6px;
+    font-size: 18px;
+    line-height: 30px;
+}
+.home-line{
+   border-bottom: 1px solid white ;
+   box-shadow: 1px 1px 2px #ccc;
+}
+.right-container{
+    width:32rem; 
+    position: relative;
+    margin-left:3rem;
+}
+.home-img1{
+    width: 280px;  
+    height: 280px;
+    position: absolute;
+    left:0;
+    top:0;
+    object-fit: cover;
+}
+.home-img2{
+    width: 280px;  
+    height: 280px;
+    position: absolute;
+    bottom:5%;
+    right: 2%;
+    object-fit: cover;
+    border:10px solid white;
+}
+.home-content{
+text-align: center;
+}
+.h4-clients{
+    margin-top: 5%;
+}
+.p-clients{
+    font-size: 46px;
+    line-height: 58px;
+}  
+.p-content{
+    opacity: 1;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -.3px;
+}
+.navbar-home-page{
+background-color:#1d4354;
+font-size: 20px;
+text-align: center;
+height: 100px;
+font-family: cursive;
 }

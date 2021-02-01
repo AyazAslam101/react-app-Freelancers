@@ -1,0 +1,13 @@
+
+.child{
+
+height: 50px;
+position: relative;
+animation: mymove 3s infinite;
+transition-delay: 2s;
+}
+    @keyframes mymove {
+        from {margin: auto; top: 0px;}
+        to {top: 20px;}
+    }
+   

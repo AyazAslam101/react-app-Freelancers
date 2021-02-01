@@ -1,13 +1,15 @@
 import React,  {useState } from 'react'
-import {useDispatch} from 'react-redux';
+import {useDispatch , useSelector} from 'react-redux';
 import { usersAction , userProfileAction} from './action'
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
+import {message} from "antd"
 import './App.css';
 import Navbar from './components/navbar/navbar'
 import FreelancerLogin from "./components/freelancerForm/freelancerLoginForm/freelancerLoginFrom"
 // import Freelancer from "./components/freelancers/freelancers"
 import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
+import ApplyJobs from './components/freelancers/apply-jobs/applyJobs'
 import getHirePage from './components/getHirePage/getHirePage';
 
 
@@ -16,6 +18,8 @@ function App() {
 
   // const [data, setData] = useState([...users])
   // console.log({user s});
+  const data = useSelector(state => state.userDetails)
+  console.log(data)
   const dispatch = useDispatch()
   // // useEffect(()=>{
   // //   setData(
@@ -61,7 +65,20 @@ const handleProfileData =(data)=>{
   dispatch(userProfileAction(data))
 }
 const handleUserData = (userData)=>{
-  dispatch(usersAction(userData))
+  const asdf = data.users.find((e)=>{
+    return e.email == userData.email
+  })
+  if(asdf){
+
+    message
+          .loading("Action in progress..", 1.5)
+          .then(() => message.warn("Email Taken", 1.5));
+  }else{
+    message
+    .loading("Action in progress..", 1.5)
+    .then(() => message.success("Signed up", 1.5));
+    dispatch(usersAction(userData))
+  }
 }
 const getUserData = (userData)=>{
   setprofileData({ ...profileData , userData})
@@ -81,6 +98,7 @@ const getUserData = (userData)=>{
           getUserData={getUserData}
           handleProfileData={handleProfileData}
           handleUser={handleUserData}/></Route>
+          <Route path ="/apply-job-page" exact component={ApplyJobs}></Route>
           <Route path="/home" exact component={HomePage}><HomePage a={profileData}></HomePage></Route>
           <Route path="/hire" exact component={hirePage}/>
           <Route path="/getHire" exact component={getHirePage}/>

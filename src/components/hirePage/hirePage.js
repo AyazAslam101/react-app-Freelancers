@@ -1,10 +1,13 @@
 import React from 'react'
+import Aux from "../../hoc/Auxiliary"
 
 function hirePage() {
     return (
-        <div>
+        <Aux>
+            <div className="cards-container">
             
-        </div>
+            </div>
+        </Aux>
     )
 }
 

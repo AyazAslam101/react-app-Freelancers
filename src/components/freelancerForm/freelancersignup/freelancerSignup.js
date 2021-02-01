@@ -5,6 +5,7 @@ import { Input, Form } from "antd";
 import { useSelector } from "react-redux";
 import Uploader from "../../photoUploader/photoUploader";
 import { message } from "antd";
+import RadioBtn from "./radioBtn/radioBtn"
 // import {useHistory} from 'react-router-dom'
 const layout = {
   labelCol: {
@@ -25,6 +26,7 @@ const FreelancerSignup = (props) => {
     email: "",
     password: "",
     image: "",
+    value : "",
     description: "",
   });
 
@@ -37,6 +39,14 @@ const FreelancerSignup = (props) => {
     setUserInput({ ...userInput, image: data });
   };
 
+  const handleRadioData =(RadioData)=>{
+    console.log(RadioData)
+    setUserInput({...userInput , value: RadioData
+    })
+  }
+
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userInput.name && userInput.email && userInput.password) {
@@ -44,15 +54,6 @@ const FreelancerSignup = (props) => {
         ...userInput,
         id: Math.floor(Math.random() * 1000),
       });
-      if (a) {
-        message
-          .loading("Action in progress..", 2.5)
-          .then(() => message.success("Signed up", 2.5));
-      } else {
-        message
-          .loading("Action in progress..", 1.5)
-          .then(() => message.warn("Email Taken", 1.5));
-      }
     } else {
       message.error("Please fill every input");
     }
@@ -123,6 +124,8 @@ const FreelancerSignup = (props) => {
           ></Input>
         </div>
         <div className="uploader">
+        <RadioBtn handleRadioData={handleRadioData} />
+        <br/>
           <Uploader pushingDataHandler={pushingDataHandler} />
         </div>
         <div className="signup-login-button">

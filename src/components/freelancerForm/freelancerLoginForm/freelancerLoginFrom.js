@@ -22,6 +22,7 @@ function FreelancerLoginFrom(props) {
       setloginData({ ...loginData, users });
     }
   };
+  
 
   const history = useHistory();
   const [loginData, setloginData] = useState({
@@ -83,9 +84,6 @@ function FreelancerLoginFrom(props) {
             >
               Login in
             </button>
-          </div>
-          <div className="a-tag">
-            <Button>Forgotten Password?</Button>
           </div>
           <div className="line"></div>
         </form>

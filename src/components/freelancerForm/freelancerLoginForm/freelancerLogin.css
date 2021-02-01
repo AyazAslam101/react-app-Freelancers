@@ -3,7 +3,7 @@
 
 .login-form {
   width: 400px;
-  height: 450px;
+  height: 400px;
   margin: auto;
   border-radius: 8px;
   text-align: center;
@@ -24,6 +24,7 @@ h4{
   margin-top: 10px;
   height: 45px;
   font-size: 17px;
+  text-align: start;
   padding: 14px 16px;
   width: 330px;
   border-radius: 8px;
@@ -33,6 +34,7 @@ h4{
 .password-information {
   margin-top: 10px;
   height: 45px;
+  text-align: start;
   font-size: 17px;
   padding: 14px 16px;
   width: 330px;
