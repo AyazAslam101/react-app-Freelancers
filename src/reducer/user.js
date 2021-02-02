@@ -1,8 +1,9 @@
-import { USER_ACTION, USER_PROFILE_ACTION } from "../action/constants";
+import { USER_ACTION, USER_PROFILE_ACTION  , PROPOSAL_ACTION} from "../action/constants";
 
 const initialState = {
     users: JSON.parse(localStorage.users || "[]"),
-    userProfile : JSON.parse(localStorage.userProfile || '{}')
+    userProfile : JSON.parse(localStorage.userProfile || '{}'),
+    userProposal : JSON.parse(localStorage.userProposal || '{}')
 }
 
 
@@ -15,10 +16,15 @@ export  const userDetails = (state = initialState, action )=>{
             _state.users = [..._state.users, action.payload];
             localStorage.setItem("users",JSON.stringify(_state.users))
             return _state;
-            case USER_PROFILE_ACTION:  
+        case USER_PROFILE_ACTION:  
             const _states = {...state};
             _states.userProfile = {..._states.userProfile, userProfile:action.payload};
             localStorage.setItem("userProfile" ,JSON.stringify(action.payload))
+        case PROPOSAL_ACTION:
+            const _stateProposal = {...state}
+            _stateProposal.userProposal = [..._stateProposal.userProposal, action.payload];
+            localStorage.setItem("userProposal" , JSON.stringify(_stateProposal.userProposals));
+            return _state
     }
     return state;
 }
