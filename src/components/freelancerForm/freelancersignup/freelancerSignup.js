@@ -16,6 +16,12 @@ const layout = {
   },
 };
 
+const optionsWithDisabled = [
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Pear', value: 'Pear' },
+  { label: 'Orange', value: 'Orange', disabled: true },
+];
+
 const FreelancerSignup = (props) => {
   const dataUser = useSelector((state) => state.userDetails);
 
@@ -29,6 +35,17 @@ const FreelancerSignup = (props) => {
     value : "",
     description: "",
   });
+
+  const [radio, setradio] = useState({
+    value4  :"client"
+  })
+
+  const onChange4 = e => {
+    console.log('radio4 checked', e.target.value);
+    this.setState({
+      value4: e.target.value,
+    });
+  };
 
   const [showNewForm, setshowNewForm] = useState({
     showPhotoUploader: false,
@@ -98,33 +115,34 @@ const FreelancerSignup = (props) => {
             onChange={handleData}
             className="signup-email-information"
             type="text"
-            placeholder="name"
+            placeholder="Name"
             id="name"
           ></Input>
           <Input
             onChange={handleData}
             className="signup-password-information"
             type="email"
-            placeholder="Email"
+            placeholder="Email Address"
             id="email"
           ></Input>
           <Input
             onChange={handleData}
             className="signup-password-information"
             type="password"
-            placeholder="password"
+            placeholder="New Password"
             id="password"
           ></Input>
           <Input
             onChange={handleData}
             className="signup-password-information"
             type="password"
-            placeholder="Confirm password"
+            placeholder="Confirm Password"
             id="password"
           ></Input>
         </div>
+        <div className="radio">
+        </div>
         <div className="uploader">
-        <RadioBtn handleRadioData={handleRadioData} />
         <br/>
           <Uploader pushingDataHandler={pushingDataHandler} />
         </div>

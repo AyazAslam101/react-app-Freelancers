@@ -17,14 +17,14 @@ export  const userDetails = (state = initialState, action )=>{
             localStorage.setItem("users",JSON.stringify(_state.users))
             return _state;
         case USER_PROFILE_ACTION:  
-            const _states = {...state};
-            _states.userProfile = {..._states.userProfile, userProfile:action.payload};
-            localStorage.setItem("userProfile" ,JSON.stringify(action.payload))
+                const _states = {...state};
+                _states.userProfile = {..._states.userProfile, userProfile:action.payload};
+                localStorage.setItem("userProfile" ,JSON.stringify(action.payload))
         case PROPOSAL_ACTION:
             const _stateProposal = {...state}
             _stateProposal.userProposal = [..._stateProposal.userProposal, action.payload];
             localStorage.setItem("userProposal" , JSON.stringify(_stateProposal.userProposals));
-            return _state
+            return _stateProposal
     }
     return state;
 }

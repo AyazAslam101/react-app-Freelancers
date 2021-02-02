@@ -10,7 +10,7 @@ const style = {
     display : "flex",
     flexWrap:"wrap",
     // alignItem:"space-between",
-    // width:"100vw",
+    width:"100vw",
     justifyContent:"space-around",
     // marginBottom:"40px",
     alignItem:"space-around",

@@ -11,6 +11,7 @@ import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
 import ApplyJobs from './components/freelancers/apply-jobs/applyJobs'
 import getHirePage from './components/getHirePage/getHirePage';
+import Button from "./components/button/button";
 
 
 function App() {
@@ -75,8 +76,8 @@ const handleUserData = (userData)=>{
           .then(() => message.warn("Email Taken", 1.5));
   }else{
     message
-    .loading("Action in progress..", 1.5)
-    .then(() => message.success("Signed up", 1.5));
+    .loading("Action in progress..", 1)
+    .then(() => message.success("Signed up", 1));
     dispatch(usersAction(userData))
   }
 }
@@ -86,9 +87,12 @@ const getUserData = (userData)=>{
 
   return (
     <div className="App">
-      <Router>
+      
+      <Router>        
         <Navbar search={viewProfileHandler} />
+        <Button/>
         <Switch>
+          
           <Route path="/" exact component={FreelancerLogin} ><FreelancerLogin 
           showSearch={viewProfileHandler }
           showModal={showModal}

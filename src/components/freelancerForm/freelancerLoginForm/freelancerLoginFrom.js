@@ -30,8 +30,8 @@ function FreelancerLoginFrom(props) {
     password: "",
   });
   const goToHomePage = (e) => {
-    props.handleProfileData(loginData);
     e.preventDefault();
+    props.handleProfileData(loginData);
     let result = data.users.find((element) => {
       return (
         element.email === loginData.email &&
@@ -70,7 +70,7 @@ function FreelancerLoginFrom(props) {
             <Input
               className="password-information"
               type="password"
-              placeholder="password"
+              placeholder="Password"
               id="password"
               onChange={onChangeHandler}
             ></Input>
