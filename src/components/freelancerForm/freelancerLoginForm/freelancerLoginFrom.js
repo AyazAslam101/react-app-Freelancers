@@ -22,6 +22,7 @@ function FreelancerLoginFrom(props) {
       setloginData({ ...loginData, users });
     }
   };
+  
 
   const history = useHistory();
   const [loginData, setloginData] = useState({
@@ -69,7 +70,7 @@ function FreelancerLoginFrom(props) {
             <Input
               className="password-information"
               type="password"
-              placeholder="password"
+              placeholder="Password"
               id="password"
               onChange={onChangeHandler}
             ></Input>

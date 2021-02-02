@@ -1,7 +1,8 @@
 import React,  {useState } from 'react'
-import {useDispatch} from 'react-redux';
+import {useDispatch , useSelector} from 'react-redux';
 import { usersAction , userProfileAction} from './action'
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
+import {message} from "antd"
 import './App.css';
 import Navbar from './components/navbar/navbar'
 import FreelancerLogin from "./components/freelancerForm/freelancerLoginForm/freelancerLoginFrom"
@@ -10,6 +11,7 @@ import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
 import ApplyJobs from './components/freelancers/apply-jobs/applyJobs'
 import getHirePage from './components/getHirePage/getHirePage';
+import Button from "./components/button/button";
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
 
   // const [data, setData] = useState([...users])
   // console.log({user s});
+  const data = useSelector(state => state.userDetails)
+  console.log(data)
   const dispatch = useDispatch()
   // // useEffect(()=>{
   // //   setData(
@@ -62,7 +66,20 @@ const handleProfileData =(data)=>{
   dispatch(userProfileAction(data))
 }
 const handleUserData = (userData)=>{
-  dispatch(usersAction(userData))
+  const asdf = data.users.find((e)=>{
+    return e.email == userData.email
+  })
+  if(asdf){
+
+    message
+          .loading("Action in progress..", 1.5)
+          .then(() => message.warn("Email Taken", 1.5));
+  }else{
+    message
+    .loading("Action in progress..", 1)
+    .then(() => message.success("Signed up", 1));
+    dispatch(usersAction(userData))
+  }
 }
 const getUserData = (userData)=>{
   setprofileData({ ...profileData , userData})
@@ -70,9 +87,12 @@ const getUserData = (userData)=>{
 
   return (
     <div className="App">
-      <Router>
+      
+      <Router>        
         <Navbar search={viewProfileHandler} />
+        <Button/>
         <Switch>
+          
           <Route path="/" exact component={FreelancerLogin} ><FreelancerLogin 
           showSearch={viewProfileHandler }
           showModal={showModal}

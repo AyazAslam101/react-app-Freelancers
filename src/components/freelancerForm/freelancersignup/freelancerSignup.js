@@ -4,7 +4,8 @@ import "../freelancersignup/freelancerSignup.css";
 import { Input, Form } from "antd";
 import { useSelector } from "react-redux";
 import Uploader from "../../photoUploader/photoUploader";
-import { message , Radio  } from "antd";
+import { message } from "antd";
+import RadioBtn from "./radioBtn/radioBtn"
 // import {useHistory} from 'react-router-dom'
 const layout = {
   labelCol: {
@@ -31,6 +32,7 @@ const FreelancerSignup = (props) => {
     email: "",
     password: "",
     image: "",
+    value : "",
     description: "",
   });
 
@@ -54,6 +56,14 @@ const FreelancerSignup = (props) => {
     setUserInput({ ...userInput, image: data });
   };
 
+  const handleRadioData =(RadioData)=>{
+    console.log(RadioData)
+    setUserInput({...userInput , value: RadioData
+    })
+  }
+
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userInput.name && userInput.email && userInput.password) {
@@ -61,15 +71,6 @@ const FreelancerSignup = (props) => {
         ...userInput,
         id: Math.floor(Math.random() * 1000),
       });
-      if (a) {
-        message
-          .loading("Action in progress..", 2.5)
-          .then(() => message.warn("Email Taken", 2.5));
-      } else {
-        message
-          .loading("Action in progress..", 1.5)
-          .then(() => message.success("Signed up", 1.5));
-      }
     } else {
       message.error("Please fill every input");
     }
@@ -114,41 +115,35 @@ const FreelancerSignup = (props) => {
             onChange={handleData}
             className="signup-email-information"
             type="text"
-            placeholder="name"
+            placeholder="Name"
             id="name"
           ></Input>
           <Input
             onChange={handleData}
             className="signup-password-information"
             type="email"
-            placeholder="Email"
+            placeholder="Email Address"
             id="email"
           ></Input>
           <Input
             onChange={handleData}
             className="signup-password-information"
             type="password"
-            placeholder="password"
+            placeholder="New Password"
             id="password"
           ></Input>
           <Input
             onChange={handleData}
             className="signup-password-information"
             type="password"
-            placeholder="Confirm password"
+            placeholder="Confirm Password"
             id="password"
           ></Input>
         </div>
         <div className="radio">
-        <Radio.Group
-          options={optionsWithDisabled}
-          onChange={onChange4}
-          value={value4}
-          optionType="button"
-          buttonStyle="solid"
-        />
         </div>
         <div className="uploader">
+        <br/>
           <Uploader pushingDataHandler={pushingDataHandler} />
         </div>
         <div className="signup-login-button">
