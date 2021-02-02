@@ -10,7 +10,7 @@ const style = {
     display : "flex",
     flexWrap:"wrap",
     // alignItem:"space-between",
-    width:"100vw",
+    // width:"100vw",
     justifyContent:"space-around",
     // marginBottom:"40px",
     alignItem:"space-around",
@@ -36,7 +36,8 @@ function GetHirePage() {
     }, [])
 
     
-  const showModal = () => {
+  const showModal = (id) => {
+      console.log(id)
     setIsModalVisible(true);
   };
 
@@ -48,10 +49,12 @@ function GetHirePage() {
     setIsModalVisible(false);
   };
     const posts = postData.post.map((post)=>{
-        return  <Card title={post.title} style={{ width: 400 , height:300 ,marginBottom:30}} hoverable >
+        return  <Card title={post.title} style={{ width: 350 , height:300 ,marginBottom:30}} hoverable >
             <h3>client's name</h3>
             <p>{post.body}</p>
-            <Button type="link" onClick={showModal}>More details</Button>
+            <span>Total Proposals</span> : <br />
+
+            <Button type="link" onClick={()=>showModal(post.id)}>More details</Button>
             </Card>
 
 
@@ -61,7 +64,7 @@ function GetHirePage() {
                 <div className="post" style={style}>
                     {posts}
                 </div>
-                <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} okText="apply" okType="link" onCancel={handleCancel}>
+                <Modal title="Details" visible={isModalVisible} onOk={handleOk} okText="apply" okType="link" onCancel={handleCancel}>
                     <h1>hello</h1>
                     <p>Some contents...</p>
                     <p>Some contents...</p>

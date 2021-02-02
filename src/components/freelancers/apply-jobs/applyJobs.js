@@ -1,7 +1,7 @@
 import React ,{useState} from "react"
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button  } from 'antd';
 import {useDispatch} from "react-redux"
-import {proposalAction} from "../../../action/index"
+import {proposalAction} from "../../../action"
 
 const layout = {
   labelCol: { span: 8 },
@@ -29,7 +29,7 @@ const ApplyJobs = () => {
     console.log(proposalData)
 }
 
-const handleSubmit = ()=>{
+const handleSubmit =()=>{
   dispatch(proposalAction(proposalData))
 }
 
@@ -56,7 +56,7 @@ const handleSubmit = ()=>{
       </Form.Item>
 
       <Form.Item {...tailLayout}>
-        <Button  htmlType="submit" onChange={handleSubmit} >
+        <Button  htmlType="submit" onClick={handleSubmit} >
          submit proppose
         </Button>
       </Form.Item>
