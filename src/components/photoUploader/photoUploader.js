@@ -28,6 +28,7 @@ function PhotoUploader(props) {
     <div id="App">
       <input
         type="file"
+        title="upload image"
         id="image"
         onChange={(e) => {
           uploadImage(e);

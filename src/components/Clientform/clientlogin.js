@@ -7,9 +7,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 function Clientlogin (props) {
   let data = useSelector((state) => state.userDetails);
-
   let users = data.users;
-
   const addUser = (emailData) => {
     const filter = data.users.filter(
       (element) => element.email === emailData.email
@@ -56,7 +54,7 @@ function Clientlogin (props) {
   return (
     <Aux>
       {/* <Clientlogin/> */}
-      <div className="login-form">
+      <div className="login-form"> 
         <form onSubmit={goToHomePage}>
           <h4>LOGIN Client</h4>
           <div className="login-information">
@@ -99,7 +97,7 @@ function Clientlogin (props) {
           footer={null}
         >
           <div className="signup-style-in-modal">
-            <SignUpModal handleUserData={props.handleUser}  />
+            <SignUpModal handleUserData={props.handleUser} addUser={addUser}  />
           </div>
         </Modal>
       </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import "./profile.css";
-import Logo from "./images/2X4thv_T_400x400.jpg";
 import { useSelector } from "react-redux";
 function Profile(props) {
   const data = useSelector((state) => state.userDetails);
@@ -10,8 +9,8 @@ function Profile(props) {
       element.password === data.userProfile.password
     );
   });
-  console.log(approve.image);
-
+  
+  console.log(approve , "approve")
   return (
     <div className="Profile">
       <div className="Profile-container">
