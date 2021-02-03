@@ -11,9 +11,6 @@ import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
 import ApplyJobs from './components/freelancers/apply-jobs/applyJobs'
 import getHirePage from './components/getHirePage/getHirePage';
-import Button from "./components/button/button";
-
-
 function App() {
   
 
@@ -62,7 +59,9 @@ const viewProfileHandler = ()=>{
     showSearch: !show
   })
 }
+const [buttona,setButtona]=useState(true)
 const handleProfileData =(data)=>{
+  setButtona(!buttona)
   dispatch(userProfileAction(data))
 }
 const handleUserData = (userData)=>{
@@ -72,12 +71,12 @@ const handleUserData = (userData)=>{
   if(asdf){
 
     message
-          .loading("Action in progress..", 1.5)
-          .then(() => message.warn("Email Taken", 1.5));
+          .loading("Action in progress..", 0.5)
+          .then(() => message.warn("Email Taken", 0.5));
   }else{
     message
-    .loading("Action in progress..", 1)
-    .then(() => message.success("Signed up", 1));
+    .loading("Action in progress..", 0.5)
+    .then(() => message.success("Signed up", 0.5));
     dispatch(usersAction(userData))
   }
 }
@@ -90,9 +89,8 @@ const getUserData = (userData)=>{
       
       <Router>        
         <Navbar search={viewProfileHandler} />
-        <Button/>
-        <Switch>
-          
+        
+        <Switch> 
           <Route path="/" exact component={FreelancerLogin} ><FreelancerLogin 
           showSearch={viewProfileHandler }
           showModal={showModal}

@@ -6,6 +6,8 @@ import SignUpModal from "../../signUpModal/signUpModal";
 import { Modal, message } from "antd";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import FormHandleBtn from '../../button/button'
+// import Clientlogin from '../../Clientform/clientlogin'  
 function FreelancerLoginFrom(props) {
   let data = useSelector((state) => state.userDetails);
 
@@ -56,6 +58,8 @@ function FreelancerLoginFrom(props) {
 
   return (
     <Aux>
+      {/* <Clientlogin/> */}
+      <FormHandleBtn/>
       <div className="login-form">
         <form onSubmit={goToHomePage}>
           <h4>LOGIN FORM</h4>

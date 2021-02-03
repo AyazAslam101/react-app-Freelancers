@@ -5,8 +5,8 @@ const Button = () => {
     return (
         <div className="Radio">
             <Radio.Group>
-      <Radio.Button value="a">Clients</Radio.Button>
-      <Radio.Button value="b">Freelancer</Radio.Button>
+      <Radio.Button value="a">Log in as Clients</Radio.Button>
+      <Radio.Button value="b">log in as Freelancer</Radio.Button>
     </Radio.Group>
         </div>
     )

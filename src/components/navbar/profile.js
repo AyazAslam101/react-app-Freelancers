@@ -9,13 +9,13 @@ function Profile(props) {
       element.password === data.userProfile.password
     );
   });
+  
   console.log(approve , "approve")
-
   return (
     <div className="Profile">
       <div className="Profile-container">
         <div className="img-profile">
-          <img src={approve.data} alt="" className="img-profile" />
+          <img src={approve.image} alt="" className="img-profile" />
         </div>
         <div className="user-names">
           <p className="user-work">Front-end Developer</p>

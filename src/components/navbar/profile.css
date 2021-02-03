@@ -24,9 +24,9 @@
   font-size: 15px;
 }
 .img-profile {
-    width: 160px;
-    height: 105px;
-    border-radius: 7%;
-    margin: auto;
-    object-fit: cover;
+  width: 130px;
+  height: 120px;
+  border-radius: 7%;
+  margin: auto;
+  object-fit: cover;
 }
