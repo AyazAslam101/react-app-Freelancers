@@ -11,6 +11,7 @@ import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
 import ApplyJobs from './components/freelancers/apply-jobs/applyJobs'
 import getHirePage from './components/getHirePage/getHirePage';
+
 function App() {
   
 
@@ -91,7 +92,7 @@ const getUserData = (userData)=>{
         <Navbar search={viewProfileHandler} />
         
         <Switch> 
-          <Route path="/" exact component={FreelancerLogin} ><FreelancerLogin 
+          <FreelancerLogin 
           showSearch={viewProfileHandler }
           showModal={showModal}
           handleOk={handleOk}
@@ -99,7 +100,7 @@ const getUserData = (userData)=>{
           isModalVisible={isModalVisible}
           getUserData={getUserData}
           handleProfileData={handleProfileData}
-          handleUser={handleUserData}/></Route>
+          handleUser={handleUserData}/>
           <Route path ="/apply-job-page" exact component={ApplyJobs}></Route>
           <Route path="/home" exact component={HomePage}><HomePage a={profileData}></HomePage></Route>
           <Route path="/hire" exact component={hirePage}/>
