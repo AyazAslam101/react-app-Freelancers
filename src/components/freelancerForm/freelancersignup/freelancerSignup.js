@@ -144,6 +144,7 @@ const FreelancerSignup = (props) => {
         </div>
         <div className="uploader">
         <br/>
+        <RadioBtn handleRadioData={handleRadioData}/>
           <Uploader pushingDataHandler={pushingDataHandler} />
         </div>
         <div className="signup-login-button">

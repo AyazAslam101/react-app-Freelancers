@@ -33,6 +33,7 @@ const optionsWithDisabled = [
           value={value}
           optionType="button"
           buttonStyle="solid"
+          buttonStyle="white"
         />
       </>
     );
