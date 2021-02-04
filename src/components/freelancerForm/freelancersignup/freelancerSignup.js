@@ -16,11 +16,6 @@ const layout = {
   },
 };
 
-const optionsWithDisabled = [
-  { label: 'Apple', value: 'Apple' },
-  { label: 'Pear', value: 'Pear' },
-  { label: 'Orange', value: 'Orange', disabled: true },
-];
 
 const FreelancerSignup = (props) => {
   const dataUser = useSelector((state) => state.userDetails);

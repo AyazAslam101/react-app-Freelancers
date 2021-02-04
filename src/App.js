@@ -100,7 +100,7 @@ const getUserData = (userData)=>{
           getUserData={getUserData}
           handleProfileData={handleProfileData}
           handleUser={handleUserData}/></Route>
-          <Route path ="/apply-job-page" exact component={ApplyJobs}></Route>
+          <Route path ="/postJobs" exact component={ApplyJobs}></Route>
           <Route path="/home" exact component={HomePage}><HomePage a={profileData}></HomePage></Route>
           <Route path="/hire" exact component={hirePage}/>
           <Route path="/getHire" exact component={getHirePage}/>

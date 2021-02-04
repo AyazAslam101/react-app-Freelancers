@@ -1,7 +1,7 @@
 import React ,{useState} from "react"
 import { Form, Input, Button  } from 'antd';
 import {useDispatch} from "react-redux"
-import {proposalAction} from "../../../action"
+import {jobAction} from "../../../action"
 
 const layout = {
   labelCol: { span: 8 },
@@ -18,8 +18,9 @@ const ApplyJobs = () => {
   const dispatch = useDispatch()
 
     const [proposalData, setproposalData] = useState({
-        topic : "",
-        porposal : ""
+        title : "",
+        body : "",
+        id : Math.random 
     })
   const onChangeHandler = (event)=>{
     setproposalData({
@@ -30,7 +31,7 @@ const ApplyJobs = () => {
 }
 
 const handleSubmit =()=>{
-  dispatch(proposalAction(proposalData))
+  dispatch(jobAction(proposalData))
 }
 
   return (
@@ -42,17 +43,17 @@ const handleSubmit =()=>{
       onSubmit={handleSubmit}
     >
       <Form.Item
-        label="Freelancer's Name"
+        label="title"
         name="username"
       >
-        <Input  style={{width : 400}} id="topic" onChange={onChangeHandler}  style={{textAlign:"start" , width : 400}} />
+        <Input  style={{width : 400}} id="title" onChange={onChangeHandler}  style={{textAlign:"start" , width : 400}} />
       </Form.Item>
 
       <Form.Item
-        label="Proposal"
+        label="Job"
         name="proposal"
       >
-        <TextArea rows={10} style={{width : 400}} id="porposal" onChange={onChangeHandler} />
+        <TextArea rows={10} style={{width : 400}} id="body" onChange={onChangeHandler} />
       </Form.Item>
 
       <Form.Item {...tailLayout}>
