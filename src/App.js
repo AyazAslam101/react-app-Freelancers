@@ -7,7 +7,7 @@ import './App.css';
 import Navbar from './components/navbar/navbar'
 import {Button} from "antd"
 import FreelancerLogin from "./components/freelancerForm/freelancerLoginForm/freelancerLoginFrom"
-// import Freelancer from "./components/freelancers/freelancers"
+import Freelancer from "./components/freelancers/freelancers"
 import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
 import ApplyJobs from './components/freelancers/apply-jobs/applyJobs'
