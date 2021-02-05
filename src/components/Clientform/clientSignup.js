@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 // import {useSelector} from 'react-redux';
-import "../freelancersignup/freelancerSignup.css";
 import { Input, Form } from "antd";
 import { useSelector } from "react-redux";
-import Uploader from "../../photoUploader/photoUploader";
+import Uploader from "../photoUploader/photoUploader";
 import { message } from "antd";
 // import RadioBtn from "./radioBtn/radioBtn"
 // import {useHistory} from 'react-router-dom'
@@ -22,7 +21,7 @@ const optionsWithDisabled = [
   { label: 'Orange', value: 'Orange', disabled: true },
 ];
 
-const FreelancerSignup = (props) => {
+const Clientsignup = (props) => {
   const dataUser = useSelector((state) => state.userDetails);
 
   console.log(dataUser);
@@ -157,4 +156,4 @@ const FreelancerSignup = (props) => {
   );
 };
 
-export default FreelancerSignup;
+export default Clientsignup;

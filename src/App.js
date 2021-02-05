@@ -35,7 +35,7 @@ const showModal = () => {
   setIsModalVisible(true);
 };
 const [showForm, setshowForm] = useState({
-  showClientForm : true,
+  showClientForm : false,
   showFreelancerForm : false
 
 })
