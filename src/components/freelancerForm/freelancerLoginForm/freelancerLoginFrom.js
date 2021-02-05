@@ -6,10 +6,9 @@ import SignUpModal from "../../signUpModal/signUpModal";
 import { Modal, message } from "antd";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import FormHandleBtn from '../../button/button'
-// import Clientlogin from '../../Clientform/clientlogin'  
+import Clientlogin from '../../Clientform/clientlogin'
 function FreelancerLoginFrom(props) {
-  let data = useSelector((state) => state.userDetails);
+  let data = useSelector((state) => state.userDetails); 
 
   let users = data.users;
 
@@ -58,11 +57,10 @@ function FreelancerLoginFrom(props) {
 
   return (
     <Aux>
-      {/* <Clientlogin/> */}
-      <FormHandleBtn/>
+      <Clientlogin/>
       <div className="login-form">
         <form onSubmit={goToHomePage}>
-          <h4>LOGIN FORM</h4>
+          <h4>LOGIN Freelancer</h4>
           <div className="login-information">
             <Input
               className="email-information"
@@ -103,7 +101,7 @@ function FreelancerLoginFrom(props) {
           footer={null}
         >
           <div className="signup-style-in-modal">
-            <SignUpModal handleUserData={props.handleUser} addUser={addUser} />
+            <SignUpModal handleUserData={props.handleUserData} addUser={addUser} />
           </div>
         </Modal>
       </div>

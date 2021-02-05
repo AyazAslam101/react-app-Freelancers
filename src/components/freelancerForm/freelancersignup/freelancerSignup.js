@@ -62,7 +62,7 @@ const FreelancerSignup = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userInput.name && userInput.email && userInput.password) {
-      let a = props.handleUser({
+       props.handleUserData({
         ...userInput,
         id: Math.floor(Math.random() * 1000),
       });
@@ -139,6 +139,7 @@ const FreelancerSignup = (props) => {
         </div>
         <div className="uploader">
         <br/>
+        <RadioBtn handleRadioData={handleRadioData}/>
           <Uploader pushingDataHandler={pushingDataHandler} />
         </div>
         <div className="signup-login-button">

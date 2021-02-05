@@ -32,17 +32,20 @@ function GetHirePage() {
     const jobsData = useSelector(state => state.userDetails)
 
     const j = jobsData.userJobs.userJobs;
-    // let check = postData.post.push(j)
-    //  setPostData([...postData.post, j])
 
-    useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(response => {
-                setPostData({ post: response.data })
 
-            })
-    }, [])
+    console.log(postData, "Checking")
+    // useEffect(() => {
+    //     axios.get('https://jsonplaceholder.typicode.com/posts')
+    //         .then(response => {
+    //             setPostData({ post: response.data })
 
+    //         })
+    // }, [])
+
+    useEffect(()=>{
+        setPostData({...postData , post:[...postData.post, j]})
+     },[j])
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 16 },

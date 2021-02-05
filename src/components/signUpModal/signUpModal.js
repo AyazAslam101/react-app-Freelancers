@@ -4,7 +4,7 @@ function signUpModal(props) {
     
     return (
         <div>
-            <SignUpForm handleUser={props.handleUserData} photoData={props.photoData} addUser={props.addUser} handleRadioData={props.handleRadioData}/>
+            <SignUpForm handleUserData={props.handleUserData} photoData={props.photoData} addUser={props.addUser} handleRadioData={props.handleRadioData}/>
         </div>
     )
 }
