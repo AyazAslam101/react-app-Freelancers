@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Input } from "antd";
 import Aux from "../../hoc/Auxiliary";
-import SignUpModal from "../../components/signUpModal/signUpModal";
+import SignUpModal from "../signUpModal/signUpModal";
 import { Modal, message } from "antd";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -15,7 +15,7 @@ function Clientlogin (props) {
     if (filter.lenght > 0) {
       message.warn("email taken");
       return false;
-    } else {
+    } else {  
       setloginData({ ...loginData, users });
     }
   };

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 // import {useSelector} from 'react-redux';
-import "../freelancersignup/freelancerSignup.css";
 import { Input, Form } from "antd";
 import { useSelector } from "react-redux";
-import Uploader from "../../photoUploader/photoUploader";
+import Uploader from "../photoUploader/photoUploader";
 import { message } from "antd";
 // import RadioBtn from "./radioBtn/radioBtn"
 // import {useHistory} from 'react-router-dom'
@@ -16,8 +15,13 @@ const layout = {
   },
 };
 
+const optionsWithDisabled = [
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Pear', value: 'Pear' },
+  { label: 'Orange', value: 'Orange', disabled: true },
+];
 
-const FreelancerSignup = (props) => {
+const Clientsignup = (props) => {
   const dataUser = useSelector((state) => state.userDetails);
 
   console.log(dataUser);
@@ -61,11 +65,13 @@ const FreelancerSignup = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if (userInput.name && userInput.email && userInput.password) {
-       props.handleUserData({
+      let a = props.handleUser({
         ...userInput,
         id: Math.floor(Math.random() * 1000),
       });
+      props.hadleBtnRender()
     } else {
       message.error("Please fill every input");
     }
@@ -152,4 +158,4 @@ const FreelancerSignup = (props) => {
   );
 };
 
-export default FreelancerSignup;
+export default Clientsignup;

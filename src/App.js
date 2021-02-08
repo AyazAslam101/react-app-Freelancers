@@ -29,6 +29,7 @@ const [viewProfileButton , setviewProfileButton] = useState({
     showProfile : false
 })
 const [isModalVisible, setIsModalVisible] = useState(false);
+const [buttonRender, setbuttonRender] = useState(true)
 
 
 const showModal = () => {
@@ -95,14 +96,16 @@ const getUserData = (userData)=>{
   setprofileData({ ...profileData , userData})
 }
 
+
+
   return (
     <div className="App">
       <Router>        
         <Navbar search={viewProfileHandler} />
-        {/* <div style={{textAlign:'center' , marginBottom:10}}>
+        <div style={{textAlign:'center' , marginBottom:10}}>
             <Button onClick={handleClientForm} >Log in as Client</Button>
             <Button onClick={handleFreelancerForm} >log in as Freelancer</Button>
-        </div> */}
+        </div>
         <Switch> 
           <Route path="/" exact component={FreelancerForm} ><FreelancerForm
           showSearch={viewProfileHandler }
