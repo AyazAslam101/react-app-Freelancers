@@ -21,7 +21,7 @@ const optionsWithDisabled = [
   { label: 'Orange', value: 'Orange', disabled: true },
 ];
 
-const Clientsignup = (props) => {
+const  Clientsignup = (props) => {
   const dataUser = useSelector((state) => state.userDetails);
 
   console.log(dataUser);
@@ -66,7 +66,7 @@ const Clientsignup = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userInput.name && userInput.email && userInput.password) {
-      let a = props.handleUser({
+      let a = props.handleClientData({
         ...userInput,
         id: Math.floor(Math.random() * 1000),
       });

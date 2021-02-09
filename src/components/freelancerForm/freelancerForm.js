@@ -10,14 +10,9 @@ function FreelancerForm(props) {
       let clientlogin = null
       if(props.showForm.showClientForm === true){
           return clientlogin = <Clientlogin 
-          showSearch={props.viewProfileHandler }
           showModal={props.showModal}
-          handleOk={props.handleOk}
-          handleCancel={props.handleCancel}
-          isModalVisible={props.isModalVisible}
-          getUserData={props.getUserData}
-          handleProfileData={props.handleProfileData}
-          handleUser={props.handleUserData} />
+           isModalVisible={props.isModalVisible}
+           handleClientData={props.handleClientData}/>
       }else if(props.showForm.showFreelancerForm === true){
         return freelancerLogin =  <FreelancerLoginFrom 
         showSearch={props.viewProfileHandler }

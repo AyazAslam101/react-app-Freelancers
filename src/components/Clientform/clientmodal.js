@@ -5,7 +5,7 @@ function Clientmodal(props) {
     
     return (
         <div>
-             <Clientsignup  handleUser={props.handleUserData} photoData={props.photoData} addUser={props.addUser}/>
+             <Clientsignup  handleUser={props.handleUserData} photoData={props.photoData} handleClientData={props.handleClientData} />
         </div>
     )
 }

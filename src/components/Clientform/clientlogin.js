@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Input } from "antd";
 import Aux from "../../hoc/Auxiliary";
-import SignUpModal from "../signUpModal/signUpModal";
+import Clientmodal from "./clientmodal";
 import { Modal, message } from "antd";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -97,7 +97,7 @@ function Clientlogin (props) {
           footer={null}
         >
           <div className="signup-style-in-modal">
-            <SignUpModal handleUserData={props.handleUser} addUser={addUser}  />
+            <Clientmodal handleUserData={props.handleUser} addUser={addUser} handleClientData={props.handleClientData} />
           </div>
         </Modal>
       </div>

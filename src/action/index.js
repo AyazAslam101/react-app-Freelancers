@@ -1,4 +1,4 @@
-import { USER_ACTION , USER_PROFILE_ACTION , PROPOSAL_ACTION } from "./constants";
+import { USER_ACTION , USER_PROFILE_ACTION , PROPOSAL_ACTION ,CLIENT_DATA } from "./constants";
 
 export const usersAction = (payload) => {
     return {
@@ -17,6 +17,13 @@ export const userProfileAction = (payload)=>{
 export const proposalAction = (payload)=>{
     return{
         type : PROPOSAL_ACTION,
+        payload
+    }
+}
+
+export const clientDataAction = (payload)=>{
+    return{
+        type : CLIENT_DATA,
         payload
     }
 }

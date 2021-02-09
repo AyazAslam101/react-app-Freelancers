@@ -1,6 +1,6 @@
 import React,  {useState } from 'react'
 import {useDispatch , useSelector} from 'react-redux';
-import { usersAction , userProfileAction} from './action'
+import { usersAction , userProfileAction , clientDataAction} from './action'
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
 import {message} from "antd"
 import './App.css';
@@ -19,6 +19,8 @@ function App() {
   const data = useSelector(state => state.userDetails)
   console.log(data)
   const dispatch = useDispatch()
+  const clientData = useSelector(state => state.userDetails)
+  console.log(clientData , "CHECK")
  
 const [profileData , setprofileData] = useState({
   email : "",
@@ -90,6 +92,24 @@ const handleUserData = (userData)=>{
     dispatch(usersAction(userData))
   }
 }
+
+const handleClientData = (clientData)=>{
+  console.log(clientData)
+  const clients = data.clientUsers.find((e)=>{
+    return e.email == clientData.email
+  })
+  if(clients){
+
+    message
+          .loading("Action in progress..", 0.5)
+          .then(() => message.warn("Email Taken", 0.5));
+  }else{
+    message
+    .loading("Action in progress..", 0.5)
+    .then(() => message.success("Signed up", 0.5));
+    dispatch(usersAction(clientData))
+  }
+}
 const getUserData = (userData)=>{
   setprofileData({ ...profileData , userData})
 }
@@ -105,6 +125,7 @@ const getUserData = (userData)=>{
         <Switch> 
           <Route path="/" exact component={FreelancerForm} ><FreelancerForm
           showSearch={viewProfileHandler }
+          handleClientData={handleClientData}
           showModal={showModal}
           handleClientForm={handleClientForm}
           handleOk={handleOk}

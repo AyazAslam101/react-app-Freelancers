@@ -1,9 +1,10 @@
-import { USER_ACTION, USER_PROFILE_ACTION  , PROPOSAL_ACTION} from "../action/constants";
+import { USER_ACTION, USER_PROFILE_ACTION  , PROPOSAL_ACTION , CLIENT_DATA} from "../action/constants";
 
 const initialState = {
     users: JSON.parse(localStorage.users || "[]"),
     userProfile : JSON.parse(localStorage.userProfile || '{}'),
     userProposal : JSON.parse(localStorage.userProposal || '[]'),
+    clientUsers : JSON.parse(localStorage.clientData || "[]")
 }
 
 
@@ -25,6 +26,10 @@ export  const userDetails = (state = initialState, action )=>{
             _stateProposal.userProposal = [..._stateProposal.userProposal,  action.payload];
             localStorage.setItem("userProposal", JSON.stringify(_stateProposal.userProposal));
             return _stateProposal
+        case CLIENT_DATA:
+            const _clientState = {...state};
+            _clientState.clientUsers = [..._clientState.clientUsers , action.payload];
+            localStorage.setItem("clientData" , JSON.stringify(_clientState.clientUsers))
     }
     return state;
 }
