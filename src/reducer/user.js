@@ -4,7 +4,8 @@ const initialState = {
     users: JSON.parse(localStorage.users || "[]"),
     userProfile : JSON.parse(localStorage.userProfile || '{}'),
     userProposal : JSON.parse(localStorage.userProposal || '[]'),
-    userJobs : JSON.parse(localStorage.userJobs || '{}')
+    userJobs : JSON.parse(localStorage.userJobs || '[]'),
+    // userJobs : JSON.parse(localStorage.userJobs || "[]")
 }
 
 
@@ -28,7 +29,7 @@ export  const userDetails = (state = initialState, action )=>{
             return _stateProposal
         case JOB_ACTION:
             const _stateJobs = {...state};
-            _stateJobs.userJobs = {..._stateJobs.userJobs , userJobs : action.payload}
+            _stateJobs.userJobs = [..._stateJobs.userJobs , action.payload];
             localStorage.setItem("userJobs" , JSON.stringify(_stateJobs.userJobs))
             return _stateJobs
     }

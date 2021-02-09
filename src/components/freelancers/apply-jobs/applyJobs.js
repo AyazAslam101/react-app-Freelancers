@@ -20,7 +20,7 @@ const ApplyJobs = () => {
     const [proposalData, setproposalData] = useState({
         title : "",
         body : "",
-        id : Math.random 
+        id : Math.random() 
     })
   const onChangeHandler = (event)=>{
     setproposalData({

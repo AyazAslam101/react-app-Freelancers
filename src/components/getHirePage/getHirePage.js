@@ -25,16 +25,17 @@ const inputstyle = {
 
 function GetHirePage() {
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [postData, setPostData] = useState({
-        post: []
-    })
+    // const [postData, setPostData] = useState({
+    //     post: []
+    // })
     const history = useHistory()
     const jobsData = useSelector(state => state.userDetails)
 
     const j = jobsData.userJobs.userJobs;
+    console.log(j)
 
 
-    console.log(postData, "Checking")
+    // console.log(postData.post, "Checking")
     // useEffect(() => {
     //     axios.get('https://jsonplaceholder.typicode.com/posts')
     //         .then(response => {
@@ -43,9 +44,9 @@ function GetHirePage() {
     //         })
     // }, [])
 
-    useEffect(()=>{
-        setPostData({...postData , post:[...postData.post, j]})
-     },[j])
+    // useEffect(()=>{
+    //     setPostData({...postData , post:[...postData.post, j]})
+    //  },[j])
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 16 },
@@ -80,7 +81,7 @@ function GetHirePage() {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
-    const posts = postData.post.map((post) => {
+    const posts = jobsData.userJobs.map((post) => {
         return <Card title={post.title} style={{ width: 350, height: 300, marginBottom: 30 }} hoverable onClick={() => showModal(post.id)} >
             <h3>client's name</h3>
             <p>{post.body}</p>
