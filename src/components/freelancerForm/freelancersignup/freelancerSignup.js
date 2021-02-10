@@ -62,7 +62,7 @@ const FreelancerSignup = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userInput.name && userInput.email && userInput.password) {
-       props.handleUserData({
+      let a = props.handleUserData({
         ...userInput,
         id: Math.floor(Math.random() * 1000),
       });

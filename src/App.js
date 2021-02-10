@@ -1,13 +1,13 @@
 import React,  {useState } from 'react'
 import {useDispatch , useSelector} from 'react-redux';
-import { usersAction , userProfileAction} from './action'
+import { usersAction , userProfileAction , clientDataAction} from './action'
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
 import {message} from "antd"
 import './App.css';
 import Navbar from './components/navbar/navbar'
 import {Button} from "antd"
 import FreelancerLogin from "./components/freelancerForm/freelancerLoginForm/freelancerLoginFrom"
-// import Freelancer from "./components/freelancers/freelancers"
+import Freelancer from "./components/freelancers/freelancers"
 import HomePage from './components/homePage/homePage';
 import hirePage from './components/hirePage/hirePage';
 import ApplyJobs from './components/freelancers/apply-jobs/applyJobs'
@@ -19,6 +19,8 @@ function App() {
   const data = useSelector(state => state.userDetails)
   console.log(data)
   const dispatch = useDispatch()
+  const clientData = useSelector(state => state.userDetails)
+  console.log(clientData , "CHECK")
  
 const [profileData , setprofileData] = useState({
   email : "",
@@ -92,6 +94,24 @@ const handleUserData = (userData)=>{
     dispatch(usersAction(userData))
   }
 }
+
+const handleClientData = (clientData)=>{
+  console.log(clientData , "check")
+  const clients = data.clientUsers.find((e)=>{
+    return e.email == clientData.email
+  })
+  if(clients){
+
+    message
+          .loading("Action in progress..", 0.5)
+          .then(() => message.warn("Email Taken", 0.5));
+  }else{
+    message
+    .loading("Action in progress..", 0.5)
+    .then(() => message.success("Signed up", 0.5));
+    dispatch(clientDataAction(clientData))
+  }
+}
 const getUserData = (userData)=>{
   setprofileData({ ...profileData , userData})
 }
@@ -109,6 +129,7 @@ const getUserData = (userData)=>{
         <Switch> 
           <Route path="/" exact component={FreelancerForm} ><FreelancerForm
           showSearch={viewProfileHandler }
+          handleClientData={handleClientData}
           showModal={showModal}
           handleClientForm={handleClientForm}
           handleOk={handleOk}
