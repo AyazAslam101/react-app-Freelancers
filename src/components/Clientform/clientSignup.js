@@ -66,7 +66,7 @@ const  Clientsignup = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userInput.name && userInput.email && userInput.password) {
-      let a = props.handleClientData({
+      props.handleClientData({
         ...userInput,
         id: Math.floor(Math.random() * 1000),
       });
@@ -108,7 +108,7 @@ const  Clientsignup = (props) => {
       onFinishFailed={onFinishFailed}
     >
       <div className="signup-form">
-        <h4>SIGNUP FORM</h4>
+        <h4>SIGNUP FOM</h4>
         <div className="signup-information">
           <Input
             onChange={handleData}
@@ -143,7 +143,6 @@ const  Clientsignup = (props) => {
         </div>
         <div className="uploader">
         <br/>
-        {/* <RadioBtn handleRadioData={handleRadioData}/> */}
           <Uploader pushingDataHandler={pushingDataHandler} />
         </div>
         <div className="signup-login-button">
@@ -157,3 +156,4 @@ const  Clientsignup = (props) => {
 };
 
 export default Clientsignup;
+                                                                          

@@ -94,21 +94,21 @@ const handleUserData = (userData)=>{
 }
 
 const handleClientData = (clientData)=>{
-  console.log(clientData)
-  const clients = data.clientUsers.find((e)=>{
-    return e.email == clientData.email
-  })
-  if(clients){
+  console.log(clientData , "check")
+  // const clients = data.clientUsers.find((e)=>{
+  //   return e.email == clientData.email
+  // })
+  // if(clients){
 
-    message
-          .loading("Action in progress..", 0.5)
-          .then(() => message.warn("Email Taken", 0.5));
-  }else{
-    message
-    .loading("Action in progress..", 0.5)
-    .then(() => message.success("Signed up", 0.5));
-    dispatch(usersAction(clientData))
-  }
+  //   message
+  //         .loading("Action in progress..", 0.5)
+  //         .then(() => message.warn("Email Taken", 0.5));
+  // }else{
+  //   message
+  //   .loading("Action in progress..", 0.5)
+  //   .then(() => message.success("Signed up", 0.5));
+  //   dispatch(usersAction(clientData))
+  // }
 }
 const getUserData = (userData)=>{
   setprofileData({ ...profileData , userData})
