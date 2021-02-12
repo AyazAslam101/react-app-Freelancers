@@ -18,6 +18,7 @@ const layout = {
 
 
 const FreelancerSignup = (props) => {
+  console.log(props, "dispatchFunctions")
   const dataUser = useSelector((state) => state.userDetails);
 
   console.log(dataUser);
@@ -62,7 +63,7 @@ const FreelancerSignup = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userInput.name && userInput.email && userInput.password) {
-      let a = props.handleUserData({
+       props.handleUser({
         ...userInput,
         id: Math.floor(Math.random() * 1000),
       });
