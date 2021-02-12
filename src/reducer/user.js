@@ -1,9 +1,12 @@
-import { USER_ACTION, USER_PROFILE_ACTION  , PROPOSAL_ACTION , CLIENT_DATA} from "../action/constants";
+import { USER_ACTION, USER_PROFILE_ACTION  , PROPOSAL_ACTION , JOB_ACTION , CLIENT_DATA} from "../action/constants";
+// import { USER_ACTION, USER_PROFILE_ACTION  , PROPOSAL_ACTION , CLIENT_DATA} from "../action/constants";
 
 const initialState = {
     users: JSON.parse(localStorage.users || "[]"),
     userProfile : JSON.parse(localStorage.userProfile || '{}'),
     userProposal : JSON.parse(localStorage.userProposal || '[]'),
+    userJobs : JSON.parse(localStorage.userJobs || '[]'),
+    // userJobs : JSON.parse(localStorage.userJobs || "[]")
     clientUsers : JSON.parse(localStorage.clientData || "[]")
 }
 
@@ -26,6 +29,11 @@ export  const userDetails = (state = initialState, action )=>{
             _stateProposal.userProposal = [..._stateProposal.userProposal,  action.payload];
             localStorage.setItem("userProposal", JSON.stringify(_stateProposal.userProposal));
             return _stateProposal
+        case JOB_ACTION:
+            const _stateJobs = {...state};
+            _stateJobs.userJobs = [..._stateJobs.userJobs , action.payload];
+            localStorage.setItem("userJobs" , JSON.stringify(_stateJobs.userJobs))
+            return _stateJobs
         case CLIENT_DATA:
             const _clientState = {...state};
             _clientState.clientUsers = [..._clientState.clientUsers , action.payload];

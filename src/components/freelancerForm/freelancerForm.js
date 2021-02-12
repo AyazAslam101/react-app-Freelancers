@@ -1,8 +1,6 @@
 import React,{useState} from 'react'
-import {Button} from "antd"
 import FreelancerLoginFrom from "./freelancerLoginForm/freelancerLoginFrom"
 import Clientlogin from "../Clientform/clientlogin"
-import FormHandleBtn from "../button/button"
 
 function FreelancerForm(props) {
     
@@ -12,25 +10,30 @@ function FreelancerForm(props) {
           return clientlogin = <Clientlogin 
           showModal={props.showModal}
            isModalVisible={props.isModalVisible}
-           handleClientData={props.handleClientData}/>
+           handleClientData={props.handleClientData}
+           handleProfileData={props.handleProfileData}
+           handleCancel={props.handleCancel}
+           getUserData={props.getUserData}/>
       }else if(props.showForm.showFreelancerForm === true){
-        return freelancerLogin =  <FreelancerLoginFrom 
-        showSearch={props.viewProfileHandler }
-        showModal={props.showModal}
-        handleOk={props.handleOk}
-        handleCancel={props.handleCancel}
-        isModalVisible={props.isModalVisible}
-        getUserData={props.getUserData}
-        handleProfileData={props.handleProfileData}
-        handleUser={props.handleUserData} />
+        return freelancerLogin = <FreelancerLoginFrom 
+                showSearch={props.viewProfileHandler }
+                showModal={props.showModal}
+                handleOk={props.handleOk}
+                handleCancel={props.handleCancel}
+                isModalVisible={props.isModalVisible}
+                getUserData={props.getUserData}
+                handleProfileData={props.handleProfileData}
+                handleUserData={props.handleUserData}
+                hadleBtnRender={props.hadleBtnRender} />  
       }
     return (
         <div>
             
             {/* <FormHandleBtn handleClientForm={handleClientForm} handleFreelancerForm={handleFreelancerForm}/> */}
             <div>
-                {clientlogin}
-                {freelancerLogin}
+                   {clientlogin}
+                   {freelancerLogin}
+
             </div>
         </div>
     )

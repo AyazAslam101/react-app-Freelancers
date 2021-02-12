@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-// import {useSelector} from 'react-redux';
 import "../freelancersignup/freelancerSignup.css";
 import { Input, Form } from "antd";
 import { useSelector } from "react-redux";
 import Uploader from "../../photoUploader/photoUploader";
 import { message } from "antd";
-// import RadioBtn from "./radioBtn/radioBtn"
-// import {useHistory} from 'react-router-dom'
 const layout = {
   labelCol: {
     span: 8,
@@ -16,18 +13,13 @@ const layout = {
   },
 };
 
-const optionsWithDisabled = [
-  { label: 'Apple', value: 'Apple' },
-  { label: 'Pear', value: 'Pear' },
-  { label: 'Orange', value: 'Orange', disabled: true },
-];
 
 const FreelancerSignup = (props) => {
   const dataUser = useSelector((state) => state.userDetails);
 
   console.log(dataUser);
 
-  const [userInput, setUserInput] = useState({
+  const [FreelancerInput, setFreelancerInput] = useState({
     name: "",
     email: "",
     password: "",
@@ -53,12 +45,12 @@ const FreelancerSignup = (props) => {
 
   const pushingDataHandler = (data) => {
     console.log(data, "image data");
-    setUserInput({ ...userInput, image: data });
+    setFreelancerInput({ ...FreelancerInput, image: data });
   };
 
   const handleRadioData =(RadioData)=>{
     console.log(RadioData)
-    setUserInput({...userInput , value: RadioData
+    FreelancerInput({...FreelancerInput , value: RadioData
     })
   }
 
@@ -66,14 +58,15 @@ const FreelancerSignup = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userInput.name && userInput.email && userInput.password) {
-      let a = props.handleUser({
-        ...userInput,
+     if (FreelancerInput.name && FreelancerInput.email && FreelancerInput.password) {
+      let a = props.handleFreelancerData({
+        ...FreelancerInput,
         id: Math.floor(Math.random() * 1000),
       });
     } else {
       message.error("Please fill every input");
     }
+
 
     let showUploader = showNewForm.showPhotoUploader;
     setshowNewForm({
@@ -82,8 +75,8 @@ const FreelancerSignup = (props) => {
   };
 
   const handleData = (event) => {
-    setUserInput({
-      ...userInput,
+    setFreelancerInput({
+      ...FreelancerInput,
       [event.target.id]: event.target.value,
     });
   };
@@ -95,7 +88,7 @@ const FreelancerSignup = (props) => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
-
+ 
   // console.log(user)
   return (
     <form

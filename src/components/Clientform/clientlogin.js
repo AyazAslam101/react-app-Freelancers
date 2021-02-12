@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 function Clientlogin (props) {
   let data = useSelector((state) => state.userDetails);
-  let users = data.users;
+  let clients = data.clientUsers;
   const addUser = (emailData) => {
     const filter = data.users.filter(
       (element) => element.email === emailData.email
@@ -16,7 +16,7 @@ function Clientlogin (props) {
       message.warn("email taken");
       return false;
     } else {  
-      setloginData({ ...loginData, users });
+      setloginData({ ...loginData, clients });
     }
   };
   
@@ -29,7 +29,7 @@ function Clientlogin (props) {
   const goToHomePage = (e) => {
     props.handleProfileData(loginData);
     e.preventDefault();
-    let result = data.users.find((element) => {
+    let result = data.clientUsers.find((element) => {
       return (
         element.email === loginData.email &&
         element.password === loginData.password

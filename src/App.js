@@ -13,7 +13,7 @@ import hirePage from './components/hirePage/hirePage';
 import ApplyJobs from './components/freelancers/apply-jobs/applyJobs'
 import FreelancerForm from "./components/freelancerForm/freelancerForm"
 import getHirePage from './components/getHirePage/getHirePage';
-import FormHandleBtn from './components/button/button'
+// import FormHandleBtn from './components/button/button'
 function App() {
   
   const data = useSelector(state => state.userDetails)
@@ -30,7 +30,8 @@ const [profileData , setprofileData] = useState({
 const [viewProfileButton , setviewProfileButton] = useState({
     showProfile : false
 })
-const [isModalVisible, setIsModalVisible] = useState(false);
+const [isModalVisible,    setIsModalVisible] = useState(false);
+const [buttonRender, setbuttonRender] = useState(true)
 
 
 const showModal = () => {
@@ -76,11 +77,12 @@ const handleProfileData =(data)=>{
   setButtona(!buttona)
   dispatch(userProfileAction(data))
 }
-const handleUserData = (userData)=>{
-  const asdf = data.users.find((e)=>{
-    return e.email == userData.email
+const handleFreelancerData= (FreelancerData)=>{
+  console.log(FreelancerData , "check")
+  const Freelancer = data.FreelancerUsers.find((e)=>{
+    return e.email == FreelancerData.email
   })
-  if(asdf){
+  if(Freelancer){
 
     message
           .loading("Action in progress..", 0.5)
@@ -89,30 +91,31 @@ const handleUserData = (userData)=>{
     message
     .loading("Action in progress..", 0.5)
     .then(() => message.success("Signed up", 0.5));
-    dispatch(usersAction(userData))
+    dispatch(clientDataAction(FreelancerData))
   }
 }
-
 const handleClientData = (clientData)=>{
   console.log(clientData , "check")
-  // const clients = data.clientUsers.find((e)=>{
-  //   return e.email == clientData.email
-  // })
-  // if(clients){
+  const clients = data.clientUsers.find((e)=>{
+    return e.email == clientData.email
+  })
+  if(clients){
 
-  //   message
-  //         .loading("Action in progress..", 0.5)
-  //         .then(() => message.warn("Email Taken", 0.5));
-  // }else{
-  //   message
-  //   .loading("Action in progress..", 0.5)
-  //   .then(() => message.success("Signed up", 0.5));
-  //   dispatch(usersAction(clientData))
-  // }
+    message
+          .loading("Action in progress..", 0.5)
+          .then(() => message.warn("Email Taken", 0.5));
+  }else{
+    message
+    .loading("Action in progress..", 0.5)
+    .then(() => message.success("Signed up", 0.5));
+    dispatch(clientDataAction(clientData))
+  }
 }
 const getUserData = (userData)=>{
   setprofileData({ ...profileData , userData})
 }
+
+
 
   return (
     <div className="App">
@@ -135,9 +138,9 @@ const getUserData = (userData)=>{
           isModalVisible={isModalVisible}
           getUserData={getUserData}
           handleProfileData={handleProfileData}
-          handleUser={handleUserData}/>
+          handleFreelancerData={handleFreelancerData}/>
           </Route>
-          <Route path ="/apply-job-page" exact component={ApplyJobs}></Route>
+          <Route path ="/postJobs" exact component={ApplyJobs}></Route>
           <Route path="/home" exact component={HomePage}><HomePage a={profileData}></HomePage></Route>
           <Route path="/hire" exact component={hirePage}/>
           <Route path="/getHire" exact component={getHirePage}/>

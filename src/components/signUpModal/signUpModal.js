@@ -1,11 +1,13 @@
 import React from 'react'
 import SignUpForm from "../freelancerForm/freelancersignup/freelancerSignup"
-
+// import Clientsignup from '../../components/Clientform/clientSignup'
 function signUpModal(props) {
     
     return (
         <div>
-            <SignUpForm handleUser={props.handleUserData} photoData={props.photoData} addUser={props.addUser} handleRadioData={props.handleRadioData}/>
+             {/* <Clientsignup  photoData={props.photoData} handleClientData={props.handleClientData} /> */}
+
+            <SignUpForm  photoData={props.photoData} handleClientData={props.handleClientData} />
         </div>
     )
 }

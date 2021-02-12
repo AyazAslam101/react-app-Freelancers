@@ -26,7 +26,7 @@ const  Clientsignup = (props) => {
 
   console.log(dataUser);
 
-  const [userInput, setUserInput] = useState({
+  const [clientInput, setClientInput] = useState({
     name: "",
     email: "",
     password: "",
@@ -52,12 +52,12 @@ const  Clientsignup = (props) => {
 
   const pushingDataHandler = (data) => {
     console.log(data, "image data");
-    setUserInput({ ...userInput, image: data });
+    setClientInput({ ...clientInput, image: data });
   };
 
   const handleRadioData =(RadioData)=>{
     console.log(RadioData)
-    setUserInput({...userInput , value: RadioData
+    setClientInput({...clientInput , value: RadioData
     })
   }
 
@@ -65,9 +65,10 @@ const  Clientsignup = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userInput.name && userInput.email && userInput.password) {
-      props.handleClientData({
-        ...userInput,
+    
+    if (clientInput.name && clientInput.email && clientInput.password) {
+      let a = props.handleClientData({
+        ...clientInput,
         id: Math.floor(Math.random() * 1000),
       });
     } else {
@@ -81,8 +82,8 @@ const  Clientsignup = (props) => {
   };
 
   const handleData = (event) => {
-    setUserInput({
-      ...userInput,
+    setClientInput({
+      ...clientInput,
       [event.target.id]: event.target.value,
     });
   };

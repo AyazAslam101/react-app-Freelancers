@@ -101,7 +101,7 @@ function FreelancerLoginFrom(props) {
           footer={null}
         >
           <div className="signup-style-in-modal">
-            <SignUpModal handleUserData={props.handleUser} addUser={addUser} />
+            <SignUpModal handleUserData={props.handleUserData} addUser={addUser} />
           </div>
         </Modal>
       </div>
