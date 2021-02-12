@@ -2,6 +2,7 @@ import React ,{useState} from "react"
 import { Form, Input, Button  } from 'antd';
 import {useDispatch} from "react-redux"
 import {jobAction} from "../../../action"
+import {message} from "antd"
 
 const layout = {
   labelCol: { span: 8 },
@@ -31,7 +32,14 @@ const ApplyJobs = () => {
 }
 
 const handleSubmit =()=>{
-  dispatch(jobAction(proposalData))
+  if (proposalData.title && proposalData.body ) {
+    message
+          .loading("Action in progress..", 0.5)
+          .then(() => message.success("Done", 0.5));
+    dispatch(jobAction(proposalData));
+ } else {
+   message.error("Please fill every input");
+ }
 }
 
   return (
